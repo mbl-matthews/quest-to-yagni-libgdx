@@ -11,13 +11,16 @@ public class Player {
 	boolean[] walls=null;
 	
 	/**
-	 * sets starting position on the board
-	 * @param xPos
-	 * @param yPos
+	 * 
+	 * @param name Name of the Player
+	 * @param xPos xPos of start position
+	 * @param yPos yPos of start position
+	 * @param board board id 
 	 */
 	public Player(String name,int xPos,int yPos,Board board) {
 		this.xPos=xPos;
 		this.yPos=yPos;
+		this.name=name;
 		walls=board.changePosition(width*yPos+xPos);
 		this.board= board;
 		this.width=board.getX();
@@ -25,9 +28,9 @@ public class Player {
 	
 
 	/**
-	 * moves x,y in given direction and saves walls at position
-	 * @param direction
-	 * @return true if move is possible
+	 * moves if possible in given direction and saves new walls at current position
+	 * @param direction moving direction north/south/west/east
+	 * @return true returns true if move is possible
 	 */
 	public boolean move(String direction) {
 		
@@ -55,7 +58,7 @@ public class Player {
 	}
 	
 	/**
-	 * 
+	 * returns name of the player
 	 * @return name
 	 */
 	public String getName() {
