@@ -1,7 +1,7 @@
 package Field;
 import Field.Field;
 
-class Eventfield extends Field{
+public class Eventfield extends Field{
 
     /**
      * @param id ID of Field Object, usually set by Board-Class
