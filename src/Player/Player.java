@@ -1,5 +1,5 @@
 package Player;
-import Board.Board;;
+import Board.Board;
 
 class Player {
 	
