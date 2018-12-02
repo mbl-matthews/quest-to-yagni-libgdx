@@ -1,3 +1,7 @@
+/**
+ * @author: Lukas H
+ */
+
 package Player;
 
 import org.junit.jupiter.api.Assertions;
