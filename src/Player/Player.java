@@ -17,6 +17,7 @@ public class Player {
 	public Player(String name,int xPos,int yPos,Board board) {
 		this.xPos=xPos;
 		this.yPos=yPos;
+		this.name=name;
 		walls=board.changePosition(width*yPos+xPos);
 		this.board= board;
 		this.width=board.getX();
