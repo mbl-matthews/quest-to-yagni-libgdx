@@ -17,11 +17,15 @@ public class JunitTestPlayer {
 		Assertions.assertEquals(true, p.move("east"),"Die Richtung ist blockiert");
 	}
 	
+	@Test
+	void testBoard() {
+		Assertions.assertNotNull(board,"Das Board wurde nicht gefunden");
+	}
 	
 	@Test
 	void testName() {
 		Player p = new Player("Player1",1,1,board );
-		Assertions.assertEquals("Player1", p.getName());
+		Assertions.assertEquals("Player1", p.getName(),"Der Name ist nicht richtig");
 	}
 
 
