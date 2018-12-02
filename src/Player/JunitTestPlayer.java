@@ -27,6 +27,12 @@ public class JunitTestPlayer {
 		Player p = new Player("Player1",1,1,board );
 		Assertions.assertEquals("Player1", p.getName(),"Der Name ist nicht richtig");
 	}
+	
+	@Test
+	void testWalls() {
+		Player p = new Player("Player1",1,1,board );
+		Assertions.assertArrayEquals(new boolean[]{true,false,true,true}, p.walls, "Die Wände werden nicht übergen");
+	}
 
 
 }
