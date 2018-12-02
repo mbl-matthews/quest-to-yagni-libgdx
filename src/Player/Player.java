@@ -16,7 +16,7 @@ class Player {
 	public Player(int xPos,int yPos) {
 		this.xPos=xPos;
 		this.yPos=yPos;
-		walls=Board.changePosition(breite*xPos+yPos);
+		walls=Board.changePosition(breite*yPos+xPos);
 	}
 	
 	/**
@@ -28,26 +28,28 @@ class Player {
 		
 		if(direction.toLowerCase().equals("north")&& walls[0]==true) {
 			yPos+=1;
-			walls=Board.changePosition(breite*xPos+yPos);
+			walls=Board.changePosition(breite*yPos+xPos);
 			return true;
 		}
 		else if(direction.toLowerCase().equals("south")&& walls[1]==true) {
 			yPos-=1;
-			walls=Board.changePosition(breite*xPos+yPos);
+			walls=Board.changePosition(breite*yPos+xPos);
 			return true;
 		}	
 		else if(direction.toLowerCase().equals("west")&& walls[2]==true) {
 			xPos+=1;
-			walls=Board.changePosition(breite*xPos+yPos);
+			walls=Board.changePosition(breite*yPos+xPos);
 			return true;
 		}	
 		else if(direction.toLowerCase().equals("east")&& walls[3]==true){
 			xPos+=1;
-			walls=Board.changePosition(breite*xPos+yPos);
+			walls=Board.changePosition(breite*yPos+xPos);
 			return true;
 		}
 		return false;
 	}
+	
+	
 
 }
 
