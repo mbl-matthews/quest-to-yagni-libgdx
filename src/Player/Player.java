@@ -2,12 +2,12 @@ package Player;
 
 import Board.Board;
 
-class Player {
+public class Player {
 
 	String name;
 	int xPos,yPos;
 	Board board = null;
-	final int width=board.getX();
+	int width=0;
 	boolean[] walls=null;
 	
 	/**
@@ -20,7 +20,7 @@ class Player {
 		this.yPos=yPos;
 		walls=board.changePosition(width*yPos+xPos);
 		this.board= board;
-		
+		this.width=board.getX();
 	}
 	
 
