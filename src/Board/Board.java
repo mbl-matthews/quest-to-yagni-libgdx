@@ -22,12 +22,15 @@ public class Board {
 	 * Constructor for Board with the desired Dimensions
 	 * @param x Value of the X Dimension of the Board
 	 * @param y Value of the Y Dimension of the Board
-	 * @throws Exception
 	 */
-	public Board(int x, int y) throws Exception {
+	public Board(int x, int y) {
 		this.x = x;
 		this.y = y;
-		this.fields = boardReader.getDefaultBoard();
+		try {
+			this.fields = boardReader.getDefaultBoard();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	/**
