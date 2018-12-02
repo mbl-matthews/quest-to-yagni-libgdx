@@ -8,6 +8,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 import Board.Board;
+import Event.Finishevent;
 import Field.Field;
 import Field.Finishfield;
 import Field.Playfield;
@@ -22,6 +23,7 @@ public class boardReader {
 	 */
 	public static ArrayList<Field> getDefaultBoard() throws Exception {
 		ArrayList<Field> fields = new ArrayList<Field>();
+		Finishevent finisheventobject = new Finishevent(1, "Finish");
 		
 		String[] allFields = readFile();
 		for(int i = 0;i<allFields.length;i++) {
@@ -29,7 +31,7 @@ public class boardReader {
 			if(token[4].equals("start")) {
 				fields.add(new Startfield(i,new boolean[] {Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3])}));
 			} else if (token[4].equals("finish")) {
-				fields.add(new Finishfield(i,new boolean[] {Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3])}));
+				fields.add(new Finishfield(i,new boolean[] {Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3])}, finisheventobject));
 			} else {
 				fields.add(new Playfield(i,new boolean[] {Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3])}));
 			}
