@@ -2,7 +2,7 @@ package Player;
 
 import Board.Board;
 
-class Player {
+public class Player {
 
 	String name;
 	int xPos,yPos;
