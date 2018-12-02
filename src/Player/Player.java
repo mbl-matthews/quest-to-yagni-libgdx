@@ -53,7 +53,9 @@ class Player {
 		return false;
 	}
 	
-	
+	public String getName() {
+		return name;
+	}
 
 }
 
