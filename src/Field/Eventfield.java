@@ -4,7 +4,7 @@ import Field.Field;
 
 public class Eventfield extends Field{
 
-    Event fieldevent;
+    Event event;
 
     /**
      * @param id ID of Field Object, usually set by Board-Class
@@ -12,6 +12,6 @@ public class Eventfield extends Field{
      */
     public Eventfield(int id, boolean[] wallArray, Event eventobject){
         super(id, wallArray, "Eventfield");
-        this.fieldevent = eventobject;
+        this.event = eventobject;
     }
 }
