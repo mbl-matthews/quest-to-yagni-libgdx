@@ -16,16 +16,17 @@ public abstract class Field {
      * @param id ID of Field Object, usually set by Board-Class
      * @param wallArray Bool-Array for Walls. [0] -> Above Wall, [1] -> Bottom Wall, [2] -> Left Wall, [3] -> Right Wall
      */
-    Field(int id, boolean[] wallArray){
+    Field(int id, boolean[] wallArray, String type){
         this.id = id;
         this.setWalls(wallArray);
+        this.type=type;
     }
 
 
     /**
      * @return ID of FieldObject
      */
-    public int getFieldId(){
+    int getFieldId(){
         return this.id;
     }
 
@@ -49,7 +50,7 @@ public abstract class Field {
         return new boolean[]{this.WallAbove,this.WallBottom,this.WallLeft,this.WallRight};
     }
 
-    public String getType(){
+    String getType(){
         return this.type;
     }
 }
