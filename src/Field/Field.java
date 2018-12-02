@@ -16,7 +16,7 @@ public abstract class Field {
      * @param id ID of Field Object, usually set by Board-Class
      * @param wallArray Bool-Array for Walls. [0] -> Above Wall, [1] -> Bottom Wall, [2] -> Left Wall, [3] -> Right Wall
      */
-    Field(int id, boolean[] wallArray, String type){
+    public Field(int id, boolean[] wallArray, String type){
         this.id = id;
         this.setWalls(wallArray);
         this.type=type;
