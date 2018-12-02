@@ -20,7 +20,7 @@ public class Board {
         this.fields = boardReader.getDefaultBoard();
     }
 
-    public Field getField(int pos) {
+    public static Field getField(int pos) {
         return fields.get(pos);
     }
 
