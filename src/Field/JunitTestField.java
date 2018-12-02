@@ -1,5 +1,8 @@
 package Field;
 
+import Event.Event;
+import Event.Finishevent;
+import Event.Trapevent;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +11,8 @@ class JunitTestField {
     @Test
     void testingFinishfield() {
         boolean[] walls = {true,false,false,true};
-        Field myfield = new Finishfield(255,walls);
+        Finishevent fieldevent = new Finishevent(1,"Test");
+        Field myfield = new Finishfield(255,walls, fieldevent);
 
         Assertions.assertEquals(255, myfield.getFieldId(),"Objekt hat eine falsche ID");
         Assertions.assertArrayEquals(walls, myfield.getWalls(),"Die Wände die gesetzt wurden, stimmen nicht mit den Wänden des Feldes überein.");
@@ -18,7 +22,8 @@ class JunitTestField {
     @Test
     void testingEventfield() {
         boolean[] walls = {true,false,false,true};
-        Field myfield = new Eventfield(255,walls);
+        Event fieldevent = new Trapevent(1,"Test");
+        Field myfield = new Eventfield(255,walls,fieldevent);
 
         Assertions.assertEquals(255, myfield.getFieldId(),"Objekt hat eine falsche ID");
         Assertions.assertArrayEquals(walls, myfield.getWalls(),"Die Wände die gesetzt wurden, stimmen nicht mit den Wänden des Feldes überein.");
