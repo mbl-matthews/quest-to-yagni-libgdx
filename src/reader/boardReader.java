@@ -46,12 +46,12 @@ public class boardReader {
 	 * @throws Exception Since this class is only for non-critical testing purpouses there is no Exception handling done
 	 */
 	private static String[] readFile() throws Exception {
-		BufferedReader file = new BufferedReader(new FileReader(new File("defaultBoard.txt")));
+		BufferedReader file = new BufferedReader(new FileReader(new File("C:\\defaultBoard.txt")));
 		String[] allFields = new String[35];
 		
 		int i = 0;
 		while(file.ready()) {
-			allFields[0] = file.readLine();
+			allFields[i] = file.readLine();
 			i++;
 		}
 		
