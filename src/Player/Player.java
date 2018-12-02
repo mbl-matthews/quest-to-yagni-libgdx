@@ -1,4 +1,5 @@
 package Player;
+
 import Board.Board;
 
 class Player {
@@ -52,4 +53,3 @@ class Player {
 	
 
 }
-
