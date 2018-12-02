@@ -35,7 +35,7 @@ public class JunitTestPlayer {
 	@Test
 	void testWalls() {
 		Player p = new Player("Player1",1,1,board );
-		Assertions.assertArrayEquals(new boolean[]{true,false,true,true}, p.walls, "Die Wände werden nicht übergen");
+		Assertions.assertArrayEquals(new boolean[]{true,false,false,false}, p.walls, "Die Wände werden nicht übergen");
 	}
 
 
