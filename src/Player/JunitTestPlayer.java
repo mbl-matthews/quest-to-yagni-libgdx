@@ -9,8 +9,8 @@ public class JunitTestPlayer {
 	@Test
 	void testMove() {
 		Player p = new Player(1,1);
-		Assertions.assertArrayEquals(new boolean[]{true,false,true,true}, p.move("north"),"Die Wände sind falsch angeordnet");
-		Assertions.assertArrayEquals(new boolean[]{true,false,true,false}, p.move("north"),"Die Wände sind falsch angeordnet");
+		Assertions.assertEquals(true, p.move("north"),"Die Richtung ist blockiert");
+		Assertions.assertEquals(false, p.move("west"),"Die Richtung ist blockiert");
 	}
 
 }
