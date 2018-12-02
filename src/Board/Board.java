@@ -10,9 +10,9 @@ import reader.boardReader;
 
 public class Board {
 
-    private ArrayList<Field> fields = new ArrayList<Field>();
-    private int x;
-    private int y;
+    private static ArrayList<Field> fields = new ArrayList<Field>();
+    private static int x;
+    private static int y;
 
     public Board(int x, int y) throws Exception {
         this.x = x;
