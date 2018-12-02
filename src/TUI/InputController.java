@@ -2,9 +2,11 @@ package TUI;
 
 import java.io.*;
 import Player.*;
+import Board.*;
 
 public class InputController{
-	Player p = new Player(1,1);
+	Board board=new Board(5,7);
+	Player p = new Player(Player,1,1,board);
 	public void Eingabe(){
 	String eingabe=null;
 	System.out.println("Where do you want to go?(North,South,West,East):");
