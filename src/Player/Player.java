@@ -3,7 +3,7 @@ package Player;
 import Board.Board;
 
 class Player {
-	
+
 	String name;
 	int xPos,yPos;
 	Board board = null;
@@ -54,6 +54,10 @@ class Player {
 		return false;
 	}
 	
+	/**
+	 * 
+	 * @return name
+	 */
 	public String getName() {
 		return name;
 	}
