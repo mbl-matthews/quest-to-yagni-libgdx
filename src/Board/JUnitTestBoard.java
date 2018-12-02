@@ -10,7 +10,10 @@ public class JUnitTestBoard {
 	@Test
 	void testBoard() {
 		Assertions.assertEquals(true, board.changePosition(5).length == 4,"Vier Wände sind vorhanden");
-		Assertions.assertEquals(false, board.getField(5),"Die Richtung ist blockiert");
-		Assertions.assertArrayEquals(new boolean[] {true, true, true, false}, board.getField(5).getWalls());
+		Assertions.assertArrayEquals(new boolean[] {true, false, true, true}, board.getField(5).getWalls());
+		Assertions.assertArrayEquals(new boolean[] {true, false, false, true}, board.changePosition(4));
+		Assertions.assertEquals(true,board.getX()==5,"Falscher X-Wert.");
+		Assertions.assertEquals(true,board.getY()==7,"Falscher Y-Wert.");
 	}
+	
 }
