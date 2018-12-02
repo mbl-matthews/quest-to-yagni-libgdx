@@ -45,7 +45,7 @@ public class boardReader {
 	 * @return 
 	 * @throws Exception Since this class is only for non-critical testing purpouses there is no Exception handling done
 	 */
-	private static String[] readFile() throws Exception {
+	static String[] readFile() throws Exception {
 		BufferedReader file = new BufferedReader(new FileReader(new File("C:\\defaultBoard.txt")));
 		String[] allFields = new String[35];
 		
