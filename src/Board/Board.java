@@ -24,7 +24,7 @@ public class Board {
         return fields.get(pos);
     }
 
-    public static boolean[] changePosition(int pos) {
+    public boolean[] changePosition(int pos) {
         return fields.get(pos).getWalls();
     }
 
