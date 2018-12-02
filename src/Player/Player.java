@@ -37,7 +37,7 @@ class Player {
 			return true;
 		}	
 		else if(direction.toLowerCase().equals("west")&& walls[2]==true) {
-			xPos+=1;
+			xPos-=1;
 			walls=Board.changePosition(breite*yPos+xPos);
 			return true;
 		}	
