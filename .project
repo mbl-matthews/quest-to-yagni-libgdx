@@ -1,11 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+	<?xml version="1.0" encoding="UTF-8"?>
 	<projectDescription>
 		<name>puzzleOOP</name>
-	<<<<<<< HEAD
 		<comment>OOP</comment>
-	=======
-		<comment>Ich kann pushen! Geil!</comment>
-	>>>>>>> master
 		<projects>
 		</projects>
 		<buildSpec>
