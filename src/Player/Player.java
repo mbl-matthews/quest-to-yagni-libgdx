@@ -38,29 +38,41 @@ public class Player {
 	 */
 	public boolean move(String direction) {
 		
-		if(direction.toLowerCase().equals("north")&& walls[0]==true) {
-			yPos+=1;
-			walls=board.changePosition(width*yPos+xPos);
-			return true;
-		}
-		else if(direction.toLowerCase().equals("south")&& walls[1]==true) {
+		if(direction.toLowerCase().equals("north")&& walls[0]==false) {
 			yPos-=1;
 			walls=board.changePosition(width*yPos+xPos);
 			return true;
+		}
+		else if(direction.toLowerCase().equals("south")&& walls[1]==false) {
+			yPos+=1;
+			walls=board.changePosition(width*yPos+xPos);
+			return true;
 		}	
-		else if(direction.toLowerCase().equals("west")&& walls[2]==true) {
+		else if(direction.toLowerCase().equals("west")&& walls[2]==false) {
 			xPos-=1;
 			walls=board.changePosition(width*yPos+xPos);
 			return true;
 		}	
-		else if(direction.toLowerCase().equals("east")&& walls[3]==true){
+		else if(direction.toLowerCase().equals("east")&& walls[3]==false){
 			xPos+=1;
 			walls=board.changePosition(width*yPos+xPos);
 			return true;
 		}
 		return false;
 	}
-	
+
+
+	/**
+	 * @return returns index of the players position
+	 */
+	public int getPosition(){
+		return width*yPos+xPos;
+	}
+
+	public int[] getCoordinates(){
+		return new int[] {xPos,yPos};
+	}
+
 	/**
 	 * returns name of the player
 	 * @return name

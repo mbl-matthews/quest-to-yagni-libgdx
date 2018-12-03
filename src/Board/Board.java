@@ -32,7 +32,33 @@ public class Board {
 			e.printStackTrace();
 		}
 	}
-	
+
+	public int getStartfieldPosition() {
+		for(int i = 0; i<fields.size();i++) {
+			if(fields.get(i).getType().equals("Startfield")) {
+				return i;
+			}
+		}
+		return 0-1;
+	}
+
+	public int[] getStartfieldCoordinates() {
+	    int position = this.getStartfieldPosition();
+	    int x = position % 5;
+	    int y = position / 5;
+
+	    return new int[] {x,y};
+    }
+
+	public int getPosFromField(Field field)
+    {
+        for(int i=0; i<fields.size(); i++){
+            if(this.fields.get(i).equals(field)){
+                return i;
+            }
+        }
+        return -1; //If field not found
+    }
 	/**
 	 * Returns the field for the given position
 	 * @param pos Position of the field
