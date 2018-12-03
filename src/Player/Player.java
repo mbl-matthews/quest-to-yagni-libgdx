@@ -60,7 +60,15 @@ public class Player {
 		}
 		return false;
 	}
-	
+
+
+	/**
+	 * @return returns index of the players position
+	 */
+	public int getPosition(){
+		return width*yPos+xPos;
+	}
+
 	/**
 	 * returns name of the player
 	 * @return name
