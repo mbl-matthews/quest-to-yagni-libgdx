@@ -14,4 +14,7 @@ public class Finishfield extends Field{
         this.event = eventobject;
 
     }
+    public void triggerFinish(){
+    	event.triggerEvent();
+    }
 }

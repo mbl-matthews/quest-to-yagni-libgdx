@@ -1,9 +1,19 @@
+/**
+ * @author: Timo K
+ */
+
 package TUI;
 
 import java.io.*;
 import reader.*;
 import Player.*;
 import Board.*;
+import Event.Event;
+import Event.Hintevent;
+import Event.Teleportevent;
+import Field.Eventfield;
+import Field.Field;
+import Field.Finishfield;
 
 public class InputController {
     private Board board;
@@ -45,8 +55,20 @@ public class InputController {
                 System.out.println("Can't move " + eingabe);
             }
             if(board.getField(p.getPosition()).getType().equals("Finishfield")) {
-                System.out.println("Huuray! You've reached Yagni, the mighty East Westphalian God! Now let his wisdom rain down on you...");
+            	Finishfield finish=(Finishfield) board.getField(p.getPosition());
+            	finish.triggerFinish();
+            	//System.out.println("Huuray! You've reached Yagni, the mighty East Westphalian God! Now let his wisdom rain down on you...");
                 return 1;
+            }
+            if(board.getField(p.getPosition()).getType().equals("Eventfield")) {
+            	Eventfield eventfield=(Eventfield) board.getField(p.getPosition());
+            	Event event=eventfield.getEvent();
+            	if(event instanceof Hintevent) {
+            		((Hintevent) event).hintEvent(p, board);
+            	}
+            	if(event instanceof Teleportevent) {
+            		((Teleportevent) event).teleportEvent(p);
+            	}
             }
         } else {
             System.out.println("Wrong input");

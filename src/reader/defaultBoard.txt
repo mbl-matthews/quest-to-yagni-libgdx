@@ -13,14 +13,14 @@ false,false,true,true,field
 false,false,true,true,field
 false,true,true,true,field
 false,false,true,true,field
-false,false,true,false,field
+false,false,true,false,hint
 false,true,false,false,field
 false,false,false,false,start
-true,true,false,false,field
+true,true,false,false,hint
 false,false,false,true,field
 false,false,true,false,field
 true,true,false,false,field
-false,false,true,true,field
+false,false,true,true,teleport
 true,false,true,true,field
 false,false,true,false,field
 false,false,true,true,field

@@ -15,7 +15,7 @@ public class Finishevent extends Event{
      */
     @Override
     public void triggerEvent() {
-
+    	System.out.println("Huuray! You've reached Yagni, the mighty East Westphalian God! Now let his wisdom rain down on you...");
     }
 
     /**

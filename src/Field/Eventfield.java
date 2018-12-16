@@ -1,6 +1,9 @@
 package Field;
+import Board.Board;
 import Event.Event;
+import Event.Hintevent;
 import Field.Field;
+import Player.Player;
 
 public class Eventfield extends Field{
 
@@ -13,5 +16,8 @@ public class Eventfield extends Field{
     public Eventfield(int id, boolean[] wallArray, Event eventobject){
         super(id, wallArray, "Eventfield");
         this.event = eventobject;
+    }
+    public Event getEvent() {
+    	return this.event;
     }
 }

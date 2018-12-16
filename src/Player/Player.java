@@ -72,7 +72,11 @@ public class Player {
 	public int[] getCoordinates(){
 		return new int[] {xPos,yPos};
 	}
-
+	
+	public void setPosition(int[] position) {
+		xPos=position[0];
+		yPos=position[1];
+	}
 	/**
 	 * returns name of the player
 	 * @return name
