@@ -16,11 +16,11 @@ false,false,true,true,field
 false,false,true,false,hint
 false,true,false,false,field
 false,false,false,false,start
-true,true,false,false,hint
+true,true,false,false,teleport
 false,false,false,true,field
 false,false,true,false,field
 true,true,false,false,field
-false,false,true,true,teleport
+false,false,true,true,wall
 true,false,true,true,field
 false,false,true,false,field
 false,false,true,true,field

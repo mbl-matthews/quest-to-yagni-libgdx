@@ -1,29 +1,36 @@
 /**
  * @author: Timo K
+   @author: Lukas H
  */
 
-package com.questtoyagni.Event;
+package Event;
 
-import com.questtoyagni.Board.Board;
-import com.questtoyagni.Player.Player;
+import Board.Board;
+import Player.Player;
 
 public class Teleportevent extends Event{
 
+	 /**
+     * @param id    ID of Event
+     * @param name  Name of Event
+     */
 	  public Teleportevent(int id,String name){
 	        super(id,name);
 	    }
 	  
+	/**
+	* Triggers the Event Method
+	*/
 	@Override
-	public void triggerEvent(Player p,Board b) {
-		// TODO Auto-generated method stub
-		teleportEvent(p);
+	public String triggerEvent(Player p,Board b) {
+		return teleportEvent(p);
 	}
 	/**
 	 * teleport the player to a set position
 	 * @param the player of the game
 	 */
-	public void teleportEvent(Player p) {
+	public String teleportEvent(Player p) {
 		p.setPosition(new int [] {0,2});
-		System.out.println("You got Teleported");
+		return ("You got Teleported");
 	}
 }
