@@ -21,11 +21,14 @@ public class Hintevent extends Event{
      * Triggers the Event Method
      */
     @Override
-    public void triggerEvent() {
+    public void triggerEvent(Player p,Board b) {
+    	hintEvent(p, b);
     }
 
     /**
-     * Creating a hint Event. It will print a hint.
+     * prints a hint on witch position the finish is
+     * @param p the player of the game
+     * @param b the board on witch he plays
      */
     public void hintEvent(Player p,Board b){
     	int []cordinatesPlayer=p.getCoordinates();

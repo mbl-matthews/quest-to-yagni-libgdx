@@ -50,6 +50,9 @@ public class Board {
 	    return new int[] {x,y};
     }
 	
+	/**
+	 * @return the position of Finishfield
+	 */
 	public int getFinishfieldPosition() {
 		for(int i = 0; i<fields.size();i++) {
 			if(fields.get(i).getType().equals("Finishfield")) {
@@ -59,6 +62,9 @@ public class Board {
 		return 0-1;
 	}
 	
+	/**
+	 * @return the coordinates of Finishfield
+	 */
 	public int[] getFinishfieldCoordinates() {
 		int position = this.getFinishfieldPosition();
 	    int x = position % 5;
@@ -66,6 +72,7 @@ public class Board {
 	    return new int[] {x,y};
 		
 	}
+	
 	public int getPosFromField(Field field)
     {
         for(int i=0; i<fields.size(); i++){

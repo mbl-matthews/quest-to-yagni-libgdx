@@ -73,6 +73,9 @@ public class Player {
 		return new int[] {xPos,yPos};
 	}
 	
+	/** 
+	 * set position of a player
+	 */
 	public void setPosition(int[] position) {
 		xPos=position[0];
 		yPos=position[1];

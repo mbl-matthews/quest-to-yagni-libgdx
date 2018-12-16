@@ -24,7 +24,10 @@ public class InputController {
         int[] start = board.getStartfieldCoordinates();
         p = new Player("Player", start[0], start[1], board);
     }
-
+    /**
+     * get an input and moves the Player in that direction,also checks if there is a event on the field
+     * @return if the game is finished or not
+     */
     public int eingabe() {
         String eingabe = null;
         int[] cordinates = p.getCoordinates();
@@ -56,19 +59,21 @@ public class InputController {
             }
             if(board.getField(p.getPosition()).getType().equals("Finishfield")) {
             	Finishfield finish=(Finishfield) board.getField(p.getPosition());
-            	finish.triggerFinish();
+            	Event event=finish.getEvent();
+            	event.triggerEvent(p, board);
             	//System.out.println("Huuray! You've reached Yagni, the mighty East Westphalian God! Now let his wisdom rain down on you...");
                 return 1;
             }
             if(board.getField(p.getPosition()).getType().equals("Eventfield")) {
             	Eventfield eventfield=(Eventfield) board.getField(p.getPosition());
             	Event event=eventfield.getEvent();
-            	if(event instanceof Hintevent) {
+            	event.triggerEvent(p, board);
+            	/*if(event instanceof Hintevent) {
             		((Hintevent) event).hintEvent(p, board);
             	}
             	if(event instanceof Teleportevent) {
             		((Teleportevent) event).teleportEvent(p);
-            	}
+            	}*/
             }
         } else {
             System.out.println("Wrong input");

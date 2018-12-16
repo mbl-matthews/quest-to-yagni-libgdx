@@ -1,4 +1,5 @@
 package Field;
+import Event.Event;
 import Event.Finishevent;
 import Field.Field;
 
@@ -14,7 +15,7 @@ public class Finishfield extends Field{
         this.event = eventobject;
 
     }
-    public void triggerFinish(){
-    	event.triggerEvent();
+    public Event getEvent() {
+    	return this.event;
     }
 }
