@@ -1,5 +1,6 @@
 /**
  * @author: Timo K
+   @author: Lukas H
  */
 
 package TUI;
@@ -33,7 +34,7 @@ public class InputController {
         int[] cordinates = p.getCoordinates();
         //DEBUG
         System.out.println("DEBUG: Player Pos (x: "+cordinates[0]+",y: "+cordinates[1]+")");
-        System.out.println("Where do you want to go?(North,South,West,East):");
+        System.out.print("Where do you want to go?(North,South,West,East):");
         //InputStreamReader isr = new InputStreamReader(System.in);
         //BufferedReader br = new BufferedReader(isr);
         try {
@@ -55,19 +56,20 @@ public class InputController {
         if (eingabe.equalsIgnoreCase("North") || eingabe.equalsIgnoreCase("South") || eingabe.equalsIgnoreCase("West") || eingabe.equalsIgnoreCase("East")) {
             boolean ausgabe = p.move(eingabe);
             if (!ausgabe) {
-                System.out.println("Can't move " + eingabe);
+               System.out.println("Can't move " + eingabe);
             }
             if(board.getField(p.getPosition()).getType().equals("Finishfield")) {
             	Finishfield finish=(Finishfield) board.getField(p.getPosition());
             	Event event=finish.getEvent();
-            	event.triggerEvent(p, board);
-            	//System.out.println("Huuray! You've reached Yagni, the mighty East Westphalian God! Now let his wisdom rain down on you...");
+            	String msg=event.triggerEvent(p, board);
+            	System.out.println(msg);
                 return 1;
             }
             if(board.getField(p.getPosition()).getType().equals("Eventfield")) {
             	Eventfield eventfield=(Eventfield) board.getField(p.getPosition());
             	Event event=eventfield.getEvent();
-            	event.triggerEvent(p, board);
+            	String msg=event.triggerEvent(p, board);
+            	System.out.println(msg);
             	/*if(event instanceof Hintevent) {
             		((Hintevent) event).hintEvent(p, board);
             	}

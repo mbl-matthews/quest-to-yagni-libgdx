@@ -17,7 +17,8 @@ public class Trapevent extends Event{
      * Triggers the Event Method
      */
     @Override
-    public void triggerEvent(Player p,Board b) {
+    public String triggerEvent(Player p,Board b) {
+		return null;
 
     }
 

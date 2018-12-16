@@ -69,7 +69,6 @@ public class Player {
 		return width*yPos+xPos;
 	}
 	/**
-	 * 
 	 * @return returns coordinates of the player as int[]={xPos,yPos}
 	 */
 	public int[] getCoordinates(){
