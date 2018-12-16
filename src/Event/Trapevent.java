@@ -1,5 +1,8 @@
 package Event;
 
+import Board.Board;
+import Player.Player;
+
 public class Trapevent extends Event{
 
     /**
@@ -14,7 +17,7 @@ public class Trapevent extends Event{
      * Triggers the Event Method
      */
     @Override
-    public void triggerEvent() {
+    public void triggerEvent(Player p,Board b) {
 
     }
 

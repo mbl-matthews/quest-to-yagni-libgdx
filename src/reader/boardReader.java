@@ -9,6 +9,9 @@ import java.util.ArrayList;
 
 import Board.Board;
 import Event.Finishevent;
+import Event.Hintevent;
+import Event.Teleportevent;
+import Field.Eventfield;
 import Field.Field;
 import Field.Finishfield;
 import Field.Playfield;
@@ -25,6 +28,8 @@ public class boardReader {
 		ArrayList<Field> fields = new ArrayList<Field>();
 		Finishevent finisheventobject = new Finishevent(1, "Finish");
 		
+		
+		
 		String[] allFields = readFile();
 		for(int i = 0;i<allFields.length;i++) {
 			String[] token = allFields[i].split(",");
@@ -32,7 +37,13 @@ public class boardReader {
 				fields.add(new Startfield(i,new boolean[] {Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3])}));
 			} else if (token[4].equals("finish")) {
 				fields.add(new Finishfield(i,new boolean[] {Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3])}, finisheventobject));
-			} else {
+			} else if (token[4].equals("hint")) {
+				Hintevent hinteventobject = new Hintevent(i, "hint");
+				fields.add(new Eventfield(i,new boolean[] {Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3])},hinteventobject));
+			}else if (token[4].equals("teleport")) {
+				Teleportevent teleporteventobject=new Teleportevent(i,"teleport");
+				fields.add(new Eventfield(i,new boolean[] {Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3])},teleporteventobject));
+			}else {
 				fields.add(new Playfield(i,new boolean[] {Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3])}));
 			}
 		}
@@ -46,7 +57,7 @@ public class boardReader {
 	 * @throws Exception Since this class is only for non-critical testing purpouses there is no Exception handling done
 	 */
 	static String[] readFile() throws Exception {
-		BufferedReader file = new BufferedReader(new FileReader(new File("/home/dermodmaster/STUDIUMM/oop/quest-to-yagni/src/reader/defaultBoard.txt")));
+		BufferedReader file = new BufferedReader(new FileReader(new File("C:/Users/TimoK/git/quest-to-yagni/src/reader/defaultBoard.txt")));
 		String[] allFields = new String[35];
 		
 		int i = 0;
@@ -54,7 +65,6 @@ public class boardReader {
 			allFields[i] = file.readLine();
 			i++;
 		}
-		
 		return allFields;
 	}
 }

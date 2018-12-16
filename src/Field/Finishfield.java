@@ -1,4 +1,5 @@
 package Field;
+import Event.Event;
 import Event.Finishevent;
 import Field.Field;
 
@@ -13,5 +14,8 @@ public class Finishfield extends Field{
         super(id, wallArray, "Finishfield");
         this.event = eventobject;
 
+    }
+    public Event getEvent() {
+    	return this.event;
     }
 }

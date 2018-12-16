@@ -1,5 +1,8 @@
 package Event;
 
+import Board.Board;
+import Player.Player;
+
 public abstract class Event{
     private int id;
     private String name;
@@ -16,5 +19,5 @@ public abstract class Event{
     /**
      * Triggers the Event Method
      */
-    public abstract void triggerEvent();
+    public abstract void triggerEvent(Player p,Board b);
 }
