@@ -10,10 +10,17 @@ import Player.Player;
 
 public class Teleportevent extends Event{
 
+	 /**
+     * @param id    ID of Event
+     * @param name  Name of Event
+     */
 	  public Teleportevent(int id,String name){
 	        super(id,name);
 	    }
 	  
+	/**
+	* Triggers the Event Method
+	*/
 	@Override
 	public String triggerEvent(Player p,Board b) {
 		return teleportEvent(p);
