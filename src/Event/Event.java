@@ -19,5 +19,5 @@ public abstract class Event{
     /**
      * Triggers the Event Method
      */
-    public abstract void triggerEvent(Player p,Board b);
+    public abstract String triggerEvent(Player p,Board b);
 }
