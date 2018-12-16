@@ -43,6 +43,9 @@ public class boardReader {
 			}else if (token[4].equals("teleport")) {
 				Teleportevent teleporteventobject=new Teleportevent(i,"teleport");
 				fields.add(new Eventfield(i,new boolean[] {Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3])},teleporteventobject));
+			}else if (token[4].equals("wall")) {
+				Wallevent walleventobject=new Wallevent(i,"wall");
+				fields.add(new Eventfield(i,new boolean[] {Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3])},walleventobject));
 			}else {
 				fields.add(new Playfield(i,new boolean[] {Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3])}));
 			}
