@@ -15,16 +15,20 @@ public class Trapevent extends Event{
 
     /**
      * Triggers the Event Method
+     * @param p Player
+     * @param b Board
+     * @return returns event-msg as String
      */
     @Override
-    public void triggerEvent(Player p,Board b) {
-
+    public String triggerEvent(Player p,Board b) {
+    	return null;
     }
 
     /**
      * Functionality of the Trap Event if a player triggers a Event
+     * @return returns trap-msg as String
      */
-    void trapEvent(){
-
+    String trapEvent(){
+    	return null;
     }
 }

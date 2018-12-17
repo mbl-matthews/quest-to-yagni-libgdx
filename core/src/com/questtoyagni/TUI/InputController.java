@@ -60,14 +60,14 @@ public class InputController {
             if(board.getField(p.getPosition()).getType().equals("Finishfield")) {
             	Finishfield finish=(Finishfield) board.getField(p.getPosition());
             	Event event=finish.getEvent();
-            	event.triggerEvent(p, board);
-            	//System.out.println("Huuray! You've reached Yagni, the mighty East Westphalian God! Now let his wisdom rain down on you...");
-                return 1;
+            	String msg=event.triggerEvent(p, board);
+            	System.out.println(msg);
             }
             if(board.getField(p.getPosition()).getType().equals("Eventfield")) {
             	Eventfield eventfield=(Eventfield) board.getField(p.getPosition());
             	Event event=eventfield.getEvent();
-            	event.triggerEvent(p, board);
+            	String msg=event.triggerEvent(p, board);
+            	System.out.println(msg);
             	/*if(event instanceof Hintevent) {
             		((Hintevent) event).hintEvent(p, board);
             	}

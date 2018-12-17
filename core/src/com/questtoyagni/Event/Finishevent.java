@@ -1,3 +1,7 @@
+/**
+ * @author: Lukas H.
+ */
+
 package com.questtoyagni.Event;
 
 import com.questtoyagni.Board.Board;
@@ -15,16 +19,20 @@ public class Finishevent extends Event{
 
     /**
      * Triggers the Event Method
+     * @param p Player
+     * @param b Board
+     * @return returns event-msg as String
      */
     @Override
-    public void triggerEvent(Player p,Board b) {
+    public String triggerEvent(Player p,Board b) {
     	finishGame();
     }
 
     /**
-     * Will finish the current Game
+     *  Will finish the current Game
+     * @return returns finish-msg as String
      */
-    void finishGame(){
-    	System.out.println("Huuray! You've reached Yagni, the mighty East Westphalian God! Now let his wisdom rain down on you...");
+    String finishGame(){
+    	return "Huuray! You've reached Yagni, the mighty East Westphalian God! Now let his wisdom rain down on you...";
     }
 }

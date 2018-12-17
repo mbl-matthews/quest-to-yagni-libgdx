@@ -1,3 +1,7 @@
+/**
+ * @author: Lukas H.
+ */
+
 package com.questtoyagni.Event;
 
 import com.questtoyagni.Board.Board;
@@ -18,6 +22,9 @@ public abstract class Event{
 
     /**
      * Triggers the Event Method
+     * @param p Player
+     * @param b Board
+     * @return returns event-msg as String
      */
-    public abstract void triggerEvent(Player p,Board b);
+    public abstract String triggerEvent(Player p,Board b);
 }
