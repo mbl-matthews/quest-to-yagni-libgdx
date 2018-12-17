@@ -2,11 +2,11 @@
  * @author: Lukas H
  */
 
-package Event;
+package com.questtoyagni.Event;
 
-import Board.Board;
-import Field.Field;
-import Player.Player;
+import com.questtoyagni.Board.Board;
+import com.questtoyagni.Field.Field;
+import com.questtoyagni.Player.Player;
 
 public class Wallevent extends Event{
 	 /**

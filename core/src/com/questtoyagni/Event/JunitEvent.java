@@ -2,15 +2,15 @@
  * @author: Lukas H
  */
 
-package Event;
+package com.questtoyagni.Event;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import Board.Board;
-import Player.Player;
-import Field.Eventfield;
-import Field.Finishfield;
+import com.questtoyagni.Board.Board;
+import com.questtoyagni.Player.Player;
+import com.questtoyagni.Field.Eventfield;
+import com.questtoyagni.Field.Finishfield;
 class JunitEvent {
 
 	@Test

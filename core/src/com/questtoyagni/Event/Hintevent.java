@@ -25,7 +25,7 @@ public class Hintevent extends Event{
      */
     @Override
     public String triggerEvent(Player p,Board b) {
-    	hintEvent(p, b);
+    	return hintEvent(p, b);
     }
 
     /**

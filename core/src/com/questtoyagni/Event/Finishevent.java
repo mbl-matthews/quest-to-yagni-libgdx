@@ -25,7 +25,7 @@ public class Finishevent extends Event{
      */
     @Override
     public String triggerEvent(Player p,Board b) {
-    	finishGame();
+    	return finishGame();
     }
 
     /**

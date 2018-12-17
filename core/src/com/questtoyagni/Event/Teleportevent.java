@@ -3,10 +3,10 @@
    @author: Lukas H
  */
 
-package Event;
+package com.questtoyagni.Event;
 
-import Board.Board;
-import Player.Player;
+import com.questtoyagni.Board.Board;
+import com.questtoyagni.Player.Player;
 
 public class Teleportevent extends Event{
 

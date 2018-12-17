@@ -11,11 +11,13 @@ import com.questtoyagni.Board.Board;
 import com.questtoyagni.Event.Finishevent;
 import com.questtoyagni.Event.Hintevent;
 import com.questtoyagni.Event.Teleportevent;
+import com.questtoyagni.Event.Wallevent;
 import com.questtoyagni.Field.Eventfield;
 import com.questtoyagni.Field.Field;
 import com.questtoyagni.Field.Finishfield;
 import com.questtoyagni.Field.Playfield;
 import com.questtoyagni.Field.Startfield;
+
 
 public class boardReader {
 	
