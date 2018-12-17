@@ -18,9 +18,12 @@ public class Teleportevent extends Event{
 	        super(id,name);
 	    }
 	  
-	/**
-	* Triggers the Event Method
-	*/
+	    /**
+	     * Triggers the Event Method
+	     * @param p Player
+	     * @param b Board
+	     * @return returns event-msg as String
+	     */
 	@Override
 	public String triggerEvent(Player p,Board b) {
 		return teleportEvent(p);
@@ -28,6 +31,7 @@ public class Teleportevent extends Event{
 	/**
 	 * teleport the player to a set position
 	 * @param the player of the game
+	 * @return returns teleport-msg as String
 	 */
 	public String teleportEvent(Player p) {
 		p.setPosition(new int [] {0,2});

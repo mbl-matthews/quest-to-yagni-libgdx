@@ -17,9 +17,12 @@ public class Wallevent extends Event{
 	        super(id,name);
 	    }
 	  
-	/**
-	 * Triggers the Event Method
-	*/  
+	  /**
+	     * Triggers the Event Method
+	     * @param p Player
+	     * @param b Board
+	     * @return returns event-msg as String
+	     */
 	@Override
 	public String triggerEvent(Player p,Board b) {
 		return wallEvent(p,b);
@@ -28,6 +31,7 @@ public class Wallevent extends Event{
 	 * tells walls at players position
 	 * @param b board
 	 * @param p the player of the game
+	 * @return returns wall-msg as String
 	 */
 	public String wallEvent(Player p, Board b) {
 		String output = "walls in following directions:";

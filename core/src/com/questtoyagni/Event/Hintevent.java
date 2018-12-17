@@ -19,9 +19,12 @@ public class Hintevent extends Event{
 
     /**
      * Triggers the Event Method
+     * @param p Player
+     * @param b Board
+     * @return returns event-msg as String
      */
     @Override
-    public void triggerEvent(Player p,Board b) {
+    public String triggerEvent(Player p,Board b) {
     	hintEvent(p, b);
     }
 
@@ -29,8 +32,9 @@ public class Hintevent extends Event{
      * prints a hint on witch position the finish is
      * @param p the player of the game
      * @param b the board on witch he plays
+     * @return returns hint-msg as String
      */
-    public void hintEvent(Player p,Board b){
+    public String hintEvent(Player p,Board b){
     	int []cordinatesPlayer=p.getCoordinates();
     	int xPlayer=cordinatesPlayer[0];
     	int yPlayer=cordinatesPlayer[1];
@@ -54,6 +58,6 @@ public class Hintevent extends Event{
     	else if(y>0) {
     		finish+=" South";
     	}
-    	System.out.println("The finish is"+ finish + " from your position");
+    	return "The finish is"+ finish + " from your position";
     }
 }
