@@ -32,7 +32,7 @@ public class InputController {
         String eingabe = null;
         int[] cordinates = p.getCoordinates();
         //DEBUG
-        System.out.println("DEBUG: Player Pos (x: "+cordinates[0]+",y: "+cordinates[1]+")");
+        //System.out.println("DEBUG: Player Pos (x: "+cordinates[0]+",y: "+cordinates[1]+")");
         System.out.println("Where do you want to go?(North,South,West,East):");
         //InputStreamReader isr = new InputStreamReader(System.in);
         //BufferedReader br = new BufferedReader(isr);
@@ -62,6 +62,7 @@ public class InputController {
             	Event event=finish.getEvent();
             	String msg=event.triggerEvent(p, board);
             	System.out.println(msg);
+            	return 1;
             }
             if(board.getField(p.getPosition()).getType().equals("Eventfield")) {
             	Eventfield eventfield=(Eventfield) board.getField(p.getPosition());
