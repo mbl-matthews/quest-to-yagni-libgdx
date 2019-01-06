@@ -52,8 +52,8 @@ public class Board {
 	 */
 	public int[] getStartfieldCoordinates() {
 	    int position = this.getStartfieldPosition();
-	    int x = position % 5;
-	    int y = position / 5;
+	    int x = position % this.x;
+	    int y = position / this.x;
 
 	    return new int[] {x,y};
     }
@@ -75,8 +75,8 @@ public class Board {
 	 */
 	public int[] getFinishfieldCoordinates() {
 		int position = this.getFinishfieldPosition();
-	    int x = position % 5;
-	    int y = position / 5;
+	    int x = position % this.x;
+	    int y = position / this.x;
 	    return new int[] {x,y};
 		
 	}
