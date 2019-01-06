@@ -31,6 +31,9 @@ public class Menu {
     TextureAtlas buttonAtlas;
     FileHandle file = Gdx.files.local("..\\core\\assets\\arial.fnt");
 
+    /**
+     * @param sb - SpriteBatch auf welchem das Hauptmenü abgebildet werden soll
+     */
     public Menu(SpriteBatch sb){
         viewport = new FitViewport(QuestToYagni.V_WIDTH,QuestToYagni.V_WIDTH,new OrthographicCamera());
         stage = new Stage(viewport,sb);
