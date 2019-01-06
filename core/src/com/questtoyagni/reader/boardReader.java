@@ -24,13 +24,11 @@ public class boardReader {
 	/**
 	 * Returns the Default Board which is a board with the Dimensions X=5 and Y=7
 	 * @return ArrayList with the fields of the default Board
-	 * @throws Exception Since this class is only for non-critical testing purpouses there is no Exception handling done
+	 * @throws FileNotFound Exception 
 	 */
 	public static ArrayList<Field> getDefaultBoard() throws Exception {
 		ArrayList<Field> fields = new ArrayList<Field>();
 		Finishevent finisheventobject = new Finishevent(1, "Finish");
-		
-		
 		
 		String[] allFields = readFile();
 		for(int i = 0;i<allFields.length;i++) {
@@ -58,8 +56,8 @@ public class boardReader {
 	
 	/**
 	 * Reads the file with the values for the default board and returns it as a String Array
-	 * @return 
-	 * @throws Exception Since this class is only for non-critical testing purpouses there is no Exception handling done
+	 * @return  returns allFields
+	 * @throws FileNotFound Exception 
 	 */
 	static String[] readFile() throws Exception {
 		BufferedReader file = new BufferedReader(new FileReader(new File("..\\core\\assets\\defaultBoard.txt")));

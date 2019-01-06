@@ -6,7 +6,7 @@ package com.questtoyagni;
 import com.questtoyagni.TUI.InputController;
 
 /**
- * textbasiertes main ruft dauerhaft die Spieleingabe auf und beendet das Spiel nach dem Erreichen des Finishfiels
+ * text-based main calls the game input and ends the game after the finishfield is reached
  */
 public class Main {
 
