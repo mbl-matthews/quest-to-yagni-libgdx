@@ -1,4 +1,4 @@
-package com.questtoyagni.GUI;
+package com.questtoyagni.game.desktop;
 
 import java.awt.Dimension;
 import java.awt.image.BufferedImage;
@@ -12,6 +12,7 @@ import java.awt.Image;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
+import com.questtoyagni.game.desktop.*;
 
 import javax.swing.border.LineBorder;
 import java.awt.event.ActionListener;
@@ -129,6 +130,8 @@ public class Launcher extends JFrame {
 				JOptionPane.showMessageDialog((Component)thisFrame, "Both Values need to be greater than 0!", "Wrong Resolution", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
+			
+			MainMenu.mainMenu(width, height, fullscreen);
 			
 		}
 		
