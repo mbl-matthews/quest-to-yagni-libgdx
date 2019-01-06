@@ -29,6 +29,10 @@ public class Hud {
     Label titleLabel;
 
 
+    /**
+     * Konstruktor
+     * @param sb - SpriteBatch auf die das HUD abgebildet werden soll
+     */
     public Hud(SpriteBatch sb){
         worldTimer = 60;
         timeCount = 0;
@@ -51,6 +55,9 @@ public class Hud {
 
     }
 
+    /**
+     * @param dt - Zeitdifferenz zwischen dem letzten Aufruf von update() und dem jetzigen
+     */
     public void update(float dt){
         this.timeCount += dt;
         if(timeCount >= 1){
