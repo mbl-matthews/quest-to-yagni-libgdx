@@ -9,8 +9,11 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.questtoyagni.game.QuestToYagni;
 
 public class MainMenu {
-	public static void main (String[] arg) {
+	public static void mainMenu (int width, int height, boolean fullscreen) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
+		config.width = width;
+		config.height = height;
+		config.fullscreen = fullscreen;
 		new LwjglApplication(new QuestToYagni(), config);
 	}
 }
