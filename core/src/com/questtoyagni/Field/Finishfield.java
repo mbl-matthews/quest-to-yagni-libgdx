@@ -1,3 +1,7 @@
+/**
+ * @author: Levent K
+ */
+
 package com.questtoyagni.Field;
 
 import com.questtoyagni.Event.Event;
@@ -16,6 +20,11 @@ public class Finishfield extends Field{
         this.event = eventobject;
 
     }
+    
+    /**
+     * 
+     * @return returns event
+     */
     public Event getEvent() {
     	return this.event;
     }

@@ -1,3 +1,7 @@
+/**
+ * @author: Mathis B
+ */
+
 package com.questtoyagni.Board;
 
 import org.junit.jupiter.api.Assertions;

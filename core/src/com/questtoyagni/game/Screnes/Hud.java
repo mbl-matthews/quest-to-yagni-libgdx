@@ -1,3 +1,7 @@
+/**
+ * @author: Levent K
+ */
+
 package com.questtoyagni.game.Screnes;
 
 import com.badlogic.gdx.graphics.Color;
@@ -23,6 +27,7 @@ public class Hud {
     Label worldLabel;
     Label countdownLabel;
     Label titleLabel;
+
 
     public Hud(SpriteBatch sb){
         worldTimer = 60;

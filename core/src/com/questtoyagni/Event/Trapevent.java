@@ -1,3 +1,7 @@
+/**
+ * @author: Lukas H
+ */
+
 package com.questtoyagni.Event;
 
 import com.questtoyagni.Board.Board;
