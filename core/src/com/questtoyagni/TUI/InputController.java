@@ -18,13 +18,15 @@ import com.questtoyagni.Field.Finishfield;
 public class InputController {
     private Board board;
     private Player p;
-    Finishfield finish=(Finishfield) board.getField(p.getPosition());;
-    Eventfield eventfield=(Eventfield) board.getField(p.getPosition());;
+    Finishfield finish;
+    Eventfield eventfield;
 
     public InputController(int x, int y) {
         board = new Board(x,y);
         int[] start = board.getStartfieldCoordinates();
         p = new Player("Player", start[0], start[1], board);
+        finish=(Finishfield) board.getField(p.getPosition());
+        eventfield=(Eventfield) board.getField(p.getPosition());
     }
     /**
      * get an input and moves the Player in that direction,also checks if there is a event on the field
