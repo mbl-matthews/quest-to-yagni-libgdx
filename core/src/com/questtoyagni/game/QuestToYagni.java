@@ -11,6 +11,9 @@ import com.questtoyagni.game.Screens.PlayScreen;
 public class QuestToYagni extends Game {
 	public SpriteBatch batch; 	//Public damit alles auf diesen SpriteBatch zugreift
 								// weil für alles einen eigenen SpriteBatch zu erstellen ist sehr Rechenintensiv
+	
+	
+	
 	public static final int V_WIDTH = 1920;
 	public static final int V_HEIGHT = 1080;
 
