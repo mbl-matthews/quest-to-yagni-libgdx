@@ -5,6 +5,8 @@
 
 package com.questtoyagni.Event;
 
+import java.util.Random;
+
 import com.questtoyagni.Board.Board;
 import com.questtoyagni.Player.Player;
 
@@ -26,15 +28,31 @@ public class Teleportevent extends Event{
 	     */
 	@Override
 	public String triggerEvent(Player p,Board b) {
-		return teleportEvent(p);
+		return teleportEvent(p,b);
 	}
 	/**
-	 * teleport the player to a set position
-	 * @param the player of the game
+	 * teleport the player to a random position
+	 * @param p the player of the game
+	 * @param p the board of the game
 	 * @return returns teleport-msg as String
 	 */
-	public String teleportEvent(Player p) {
-		p.setPosition(new int [] {0,2});
+	public String teleportEvent(Player p,Board b) {
+		int x=new Random().nextInt(b.getX());
+		int y=new Random().nextInt(b.getY());
+		
+		
+    	// checks that the player is not teleportet to the Finishfield		
+		int []cordinatesFinish=b.getFinishfieldCoordinates();
+    	int xBoard=cordinatesFinish[0];
+    	int yBoard=cordinatesFinish[1];
+    	
+		while(x+y==xBoard+yBoard) {
+			x=new Random().nextInt(b.getX());
+			y=new Random().nextInt(b.getY());
+		}
+		
+		
+		p.setPosition(new int [] {x,y});
 		return ("You got Teleported");
 	}
 }
