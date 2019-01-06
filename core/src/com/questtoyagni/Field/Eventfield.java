@@ -12,7 +12,7 @@ import com.questtoyagni.Player.Player;
 
 public class Eventfield extends Field{
 
-	static final String type = "Eventfield";
+	public static final String type = "Eventfield";
     Event event;
 
     /**
@@ -32,10 +32,4 @@ public class Eventfield extends Field{
     	return this.event;
     }
     
-    /**
-     * @return returns type of the field
-     */
-    public String getFieldType() {
-    	return this.type;
-    }
 }
