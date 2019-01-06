@@ -12,6 +12,7 @@ import com.questtoyagni.Player.Player;
 
 public class Eventfield extends Field{
 
+	static final String type = "Eventfield";
     Event event;
 
     /**
@@ -19,7 +20,7 @@ public class Eventfield extends Field{
      * @param wallArray Bool-Array for walls. [0] -> Above Wall, [1] -> Bottom Wall, [2] -> Left Wall, [3] -> Right Wall
      */
     public Eventfield(int id, boolean[] wallArray, Event eventobject){
-        super(id, wallArray, "Eventfield");
+        super(id, wallArray, type);
         this.event = eventobject;
     }
     
@@ -29,5 +30,12 @@ public class Eventfield extends Field{
      */
     public Event getEvent() {
     	return this.event;
+    }
+    
+    /**
+     * @return returns type of the field
+     */
+    public String getFieldType() {
+    	return this.type;
     }
 }

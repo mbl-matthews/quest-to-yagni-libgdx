@@ -54,6 +54,10 @@ public abstract class Field {
         return new boolean[]{this.WallAbove,this.WallBottom,this.WallLeft,this.WallRight};
     }
 
+    /**
+     * 
+     * @return returns type of field
+     */
     public String getType(){
         return this.type;
     }
