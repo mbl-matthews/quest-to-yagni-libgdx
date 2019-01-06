@@ -29,7 +29,7 @@ public class Board {
 		try {
 			this.fields = boardReader.getDefaultBoard();
 		} catch(Exception e) {
-			e.printStackTrace();
+			System.out.print("Board-Datei konnte nicht gefunden werden!");
 		}
 	}
 
