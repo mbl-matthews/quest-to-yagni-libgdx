@@ -1,3 +1,7 @@
+/**
+ * @author: Levent K
+ */
+
 package com.questtoyagni.Field;
 
 import com.questtoyagni.Board.Board;
@@ -18,6 +22,11 @@ public class Eventfield extends Field{
         super(id, wallArray, "Eventfield");
         this.event = eventobject;
     }
+    
+    /**
+     * 
+     * @return returns event
+     */
     public Event getEvent() {
     	return this.event;
     }

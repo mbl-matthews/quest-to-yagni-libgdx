@@ -1,3 +1,7 @@
+/**
+ * @author: Levent K
+ */
+
 package com.questtoyagni.game;
 
 import com.badlogic.gdx.Game;
