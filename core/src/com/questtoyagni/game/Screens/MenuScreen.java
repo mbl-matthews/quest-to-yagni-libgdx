@@ -25,6 +25,9 @@ public class MenuScreen implements Screen {
     private Viewport gameport;
     private Menu menu;
 
+    /**
+     * MenuScreen Konstruktor
+     * */
     public MenuScreen(QuestToYagni game){
         this.game = game;
         //System.out.println(new File("..\\core\\assets\\logo_trans.png"));
@@ -39,6 +42,9 @@ public class MenuScreen implements Screen {
 
     }
 
+    /**
+     * @param delta - Zeitdifferenz zwischen dem letzten Aufruf von render() und dem jetzigen
+     */
     @Override
     public void render(float delta) {
         Gdx.gl.glClearColor(1,1,1,1);
@@ -50,6 +56,11 @@ public class MenuScreen implements Screen {
         game.batch.end();
     }
 
+    /**
+     * Aktualisiert das Bild, wenn die Größe des Fensters verändert wird
+     * @param width  -  neue Bildschirmbreite
+     * @param height -  neue Bildschirmhöhe
+     */
     @Override
     public void resize(int width, int height) {
         gameport.update(width,height);

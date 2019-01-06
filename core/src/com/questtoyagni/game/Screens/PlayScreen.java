@@ -23,6 +23,10 @@ public class PlayScreen implements Screen {
     private Viewport gameport;
     private Hud hud;
 
+    /**
+     * Konstruktor von Playscreen
+     * @param game - Objekt des Spiels
+     */
     public PlayScreen(QuestToYagni game){
         this.game = game;
         texture = new Texture("logo_trans.png");
@@ -36,6 +40,9 @@ public class PlayScreen implements Screen {
 
     }
 
+    /**
+     * @param delta - Zeitdifferenz zwischen dem letzten Aufruf von render() und dem jetzigen
+     */
     @Override
     public void render(float delta) {
         Gdx.gl.glClearColor(1,1,1,1);
@@ -47,6 +54,11 @@ public class PlayScreen implements Screen {
         game.batch.end();
     }
 
+    /**
+     * Aktualisiert das Bild, wenn die Größe des Fensters verändert wird
+     * @param width  -  neue Bildschirmbreite
+     * @param height -  neue Bildschirmhöhe
+     */
     @Override
     public void resize(int width, int height) {
         gameport.update(width,height);
@@ -57,6 +69,10 @@ public class PlayScreen implements Screen {
 
     }
 
+    /**
+     * Aktualisiert den HUD Screen
+     * @param dt - Zeitdifferenz zwischen dem letzten Aufruf von update() und dem jetzigen
+     */
     public void update(float dt){
         hud.update(dt);
     }

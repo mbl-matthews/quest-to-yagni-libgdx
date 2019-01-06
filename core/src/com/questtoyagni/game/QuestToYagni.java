@@ -24,7 +24,10 @@ public class QuestToYagni extends Game {
 
 	Texture img;
 	Music music;
-	
+
+	/**
+	 * Initalisiert ein SpriteBatch worauf quasi die GUI gezeichnet wird. Außerdem wird das Menu Screen und die Musik initalisiert und geladen.
+	 */
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
@@ -32,6 +35,9 @@ public class QuestToYagni extends Game {
 		music = Gdx.audio.newMusic(Gdx.files.internal("..\\core\\assets\\maintheme.mp3"));
 	}
 
+	/**
+	 * Wird zum Programmstart ausgeführt. Kümmert sich um die Musik und darum, dass die GUI gerendert wird.
+	 */
 	@Override
 	public void render () {
 		super.render();
@@ -39,7 +45,10 @@ public class QuestToYagni extends Game {
 		music.setLooping(true);
 		music.play();
 	}
-	
+
+	/**
+	 * Schafft Speicherplatz, indem die Methode dispose() ausgeführt wird, wenn Elemente nicht mehr benötigt werden.
+	 */
 	@Override
 	public void dispose () {
 		batch.dispose();
