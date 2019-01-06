@@ -1,3 +1,7 @@
+/**
+ * @author Levent K.
+ */
+
 package com.questtoyagni.game.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;

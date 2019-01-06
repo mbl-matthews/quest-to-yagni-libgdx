@@ -33,6 +33,10 @@ public class Board {
 		}
 	}
 
+	/**
+	 * Returns the positon of the Startfield
+	 * @return position of Startfield
+	 */
 	public int getStartfieldPosition() {
 		for(int i = 0; i<fields.size();i++) {
 			if(fields.get(i).getType().equals("Startfield")) {
@@ -42,6 +46,10 @@ public class Board {
 		return 0-1;
 	}
 
+	/**
+	 * Gets the coordinates of the startfield
+	 * @return startfield coordinates
+	 */
 	public int[] getStartfieldCoordinates() {
 	    int position = this.getStartfieldPosition();
 	    int x = position % 5;
