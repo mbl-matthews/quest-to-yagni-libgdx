@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * liest Eingaben im Controller
+ * reads input
  */
 public class InputReader {
     public static String readString() throws IOException {
