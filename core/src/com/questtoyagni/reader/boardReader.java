@@ -30,8 +30,6 @@ public class boardReader {
 		ArrayList<Field> fields = new ArrayList<Field>();
 		Finishevent finisheventobject = new Finishevent(1, "Finish");
 		
-		
-		
 		String[] allFields = readFile();
 		for(int i = 0;i<allFields.length;i++) {
 			String[] token = allFields[i].split(",");
