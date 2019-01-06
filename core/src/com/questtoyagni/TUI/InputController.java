@@ -18,8 +18,8 @@ import com.questtoyagni.Field.Finishfield;
 public class InputController {
     private Board board;
     private Player p;
-    Finishfield finish;
-    Eventfield eventfield;
+    Finishfield finish=(Finishfield) board.getField(p.getPosition());;
+    Eventfield eventfield=(Eventfield) board.getField(p.getPosition());;
 
     public InputController(int x, int y) {
         board = new Board(x,y);
@@ -60,14 +60,12 @@ public class InputController {
                 System.out.println("Can't move " + eingabe);
             }
             if(board.getField(p.getPosition()).getType().equals(finish.getFieldType())) {
-            	finish=(Finishfield) board.getField(p.getPosition());
             	Event event=finish.getEvent();
             	String msg=event.triggerEvent(p, board);
             	System.out.println(msg);
             	return 1;
             }
             if(board.getField(p.getPosition()).getType().equals(eventfield.getFieldType())) {
-            	eventfield=(Eventfield) board.getField(p.getPosition());
             	Event event=eventfield.getEvent();
             	String msg=event.triggerEvent(p, board);
             	System.out.println(msg);
