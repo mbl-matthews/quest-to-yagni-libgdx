@@ -1,5 +1,6 @@
 /**
  * @author: Timo K
+ * @author: Lukas H
  */
 
 package com.questtoyagni.TUI;
@@ -52,19 +53,20 @@ public class InputController {
                 e.printStackTrace();
             }
         }*/
+        
         if (eingabe.equalsIgnoreCase("North") || eingabe.equalsIgnoreCase("South") || eingabe.equalsIgnoreCase("West") || eingabe.equalsIgnoreCase("East")) {
             boolean ausgabe = p.move(eingabe);
             if (!ausgabe) {
                 System.out.println("Can't move " + eingabe);
-            }
-            if(board.getField(p.getPosition()).getType().equals("Finishfield")) {
+           }
+            if(board.getField(p.getPosition()).getType().equals(Finishfield.type)) {
             	Finishfield finish=(Finishfield) board.getField(p.getPosition());
             	Event event=finish.getEvent();
             	String msg=event.triggerEvent(p, board);
             	System.out.println(msg);
             	return 1;
             }
-            if(board.getField(p.getPosition()).getType().equals("Eventfield")) {
+            if(board.getField(p.getPosition()).getType().equals(Eventfield.type)) {
             	Eventfield eventfield=(Eventfield) board.getField(p.getPosition());
             	Event event=eventfield.getEvent();
             	String msg=event.triggerEvent(p, board);
