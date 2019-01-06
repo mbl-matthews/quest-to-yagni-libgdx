@@ -25,7 +25,7 @@ public class Player {
 		this.xPos=xPos;
 		this.yPos=yPos;
 		this.name=name;
-		walls=board.changePosition(width*yPos+xPos);
+		walls=board.changePositionAndGetWallsAroundNewPosition(width*yPos+xPos);
 		this.board= board;
 		this.width=board.getX();
 	}
@@ -40,22 +40,22 @@ public class Player {
 		
 		if(direction.toLowerCase().equals("north")&& walls[0]==false) {
 			yPos-=1;
-			walls=board.changePosition(width*yPos+xPos);
+			walls=board.changePositionAndGetWallsAroundNewPosition(width*yPos+xPos);
 			return true;
 		}
 		else if(direction.toLowerCase().equals("south")&& walls[1]==false) {
 			yPos+=1;
-			walls=board.changePosition(width*yPos+xPos);
+			walls=board.changePositionAndGetWallsAroundNewPosition(width*yPos+xPos);
 			return true;
 		}	
 		else if(direction.toLowerCase().equals("west")&& walls[2]==false) {
 			xPos-=1;
-			walls=board.changePosition(width*yPos+xPos);
+			walls=board.changePositionAndGetWallsAroundNewPosition(width*yPos+xPos);
 			return true;
 		}	
 		else if(direction.toLowerCase().equals("east")&& walls[3]==false){
 			xPos+=1;
-			walls=board.changePosition(width*yPos+xPos);
+			walls=board.changePositionAndGetWallsAroundNewPosition(width*yPos+xPos);
 			return true;
 		}
 		return false;
