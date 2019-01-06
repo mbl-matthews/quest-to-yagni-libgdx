@@ -2,7 +2,7 @@
  * @author: Levent K
  */
 
-package com.questtoyagni.game.Screnes;
+package com.questtoyagni.game.Scenes;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -11,15 +11,16 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
-import com.badlogic.gdx.utils.Timer;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.questtoyagni.game.QuestToYagni;
+import com.questtoyagni.game.Screens.PlayScreen;
 
 public class Menu {
     public Stage stage;
@@ -51,6 +52,17 @@ public class Menu {
         textButtonStyle.fontColor = Color.BLACK;
         button = new TextButton("Start Game", textButtonStyle);
         table.add(button);
+        button.addListener(new InputListener(){
+            @Override
+            public void touchUp (InputEvent event, float x, float y, int pointer, int button) {
+                System.out.println("not pressed");
+            }
+            @Override
+            public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
+                System.out.println("pressed");
+                return true;
+            }
+        });
 
 
         //Tabelle zur Stage hinzurfügen

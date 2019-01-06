@@ -10,11 +10,9 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.viewport.FitViewport;
-import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.questtoyagni.game.QuestToYagni;
-import com.questtoyagni.game.Screnes.Hud;
+import com.questtoyagni.game.Scenes.Hud;
 
 public class PlayScreen implements Screen {
     private QuestToYagni game;
