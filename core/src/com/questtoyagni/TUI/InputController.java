@@ -31,7 +31,6 @@ public class InputController {
      */
     public int eingabe() {
         String eingabe = null;
-        int[] cordinates = p.getCoordinates();
         //DEBUG
         //System.out.println("DEBUG: Player Pos (x: "+cordinates[0]+",y: "+cordinates[1]+")");
         System.out.println("Where do you want to go?(North,South,West,East):");
@@ -41,18 +40,7 @@ public class InputController {
             eingabe = InputReader.readString();
         } catch (Exception e) {
             e.printStackTrace();
-        } /*finally {
-            try {
-                br.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            try {
-                isr.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }*/
+        } 
         
         if (Directions.NORTH.equalsIgnoreCase(eingabe) || Directions.SOUTH.equalsIgnoreCase(eingabe) || Directions.WEST.equalsIgnoreCase(eingabe) || Directions.EAST.equalsIgnoreCase(eingabe)) {
             boolean ausgabe = p.move(eingabe);
@@ -71,12 +59,6 @@ public class InputController {
             	Event event=eventfield.getEvent();
             	String msg=event.triggerEvent(p, board);
             	System.out.println(msg);
-            	/*if(event instanceof Hintevent) {
-            		((Hintevent) event).hintEvent(p, board);
-            	}
-            	if(event instanceof Teleportevent) {
-            		((Teleportevent) eve*nt).teleportEvent(p);
-            	}*/
             }
         } else {
             System.out.println("Wrong input");
