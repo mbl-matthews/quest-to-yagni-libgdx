@@ -13,6 +13,7 @@ import com.questtoyagni.Event.Event;
 import com.questtoyagni.Event.Hintevent;
 import com.questtoyagni.Event.Teleportevent;
 import com.questtoyagni.Field.Eventfield;
+import com.questtoyagni.coordinates.Coordinate;
 import com.questtoyagni.coordinates.Directions;
 import com.questtoyagni.Field.Finishfield;
 
@@ -22,8 +23,8 @@ public class InputController {
 
     public InputController(int x, int y) {
         board = new Board(x,y);
-        int[] start = board.getStartfieldCoordinates();
-        p = new Player("Player", start[0], start[1], board);
+        Coordinate start = board.getStartfieldCoordinates();
+        p = new Player("Player", start, board);
     }
     /**
      * get an input and moves the Player in that direction,also checks if there is a event on the field
@@ -32,7 +33,7 @@ public class InputController {
     public int eingabe() {
         String eingabe = null;
         //DEBUG
-        //System.out.println("DEBUG: Player Pos (x: "+cordinates[0]+",y: "+cordinates[1]+")");
+        System.out.println("DEBUG: Player Pos (x: "+p.getCoordinates().getX()+",y: "+p.getCoordinates().getY()+")");
         System.out.println("Where do you want to go?(North,South,West,East):");
         //InputStreamReader isr = new InputStreamReader(System.in);
         //BufferedReader br = new BufferedReader(isr);

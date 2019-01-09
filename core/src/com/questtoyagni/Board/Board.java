@@ -10,13 +10,14 @@ import com.questtoyagni.Field.*;
 //import GUI.*;
 import com.questtoyagni.Player.*;
 import com.questtoyagni.TUI.*;
+import com.questtoyagni.coordinates.Coordinate;
 import com.questtoyagni.reader.boardReader;
 
 public class Board {
 	
 	private ArrayList<Field> fields = new ArrayList<Field>();
-	private int x;
-	private int y;
+	private int width;
+	private int height;
 	
 	/**
 	 * Constructor for Board with the desired Dimensions
@@ -24,8 +25,8 @@ public class Board {
 	 * @param y Value of the Y Dimension of the Board
 	 */
 	public Board(int x, int y) {
-		this.x = x;
-		this.y = y;
+		this.width = x;
+		this.height = y;
 		try {
 			this.fields = boardReader.getDefaultBoard();
 		} catch(Exception e) {
@@ -43,19 +44,16 @@ public class Board {
 				return i;
 			}
 		}
-		return 0-1;
+		return -1;
 	}
 
 	/**
 	 * Gets the coordinates of the startfield
 	 * @return startfield coordinates
 	 */
-	public int[] getStartfieldCoordinates() {
+	public Coordinate getStartfieldCoordinates() {
 	    int position = this.getStartfieldPosition();
-	    int x = position % this.x;
-	    int y = position / this.x;
-
-	    return new int[] {x,y};
+	    return new Coordinate(position % this.width,position / this.width);
     }
 	
 	/**
@@ -67,17 +65,15 @@ public class Board {
 				return i;
 			}
 		}
-		return 0-1;
+		return -1;
 	}
 	
 	/**
 	 * @return the coordinates of Finishfield
 	 */
-	public int[] getFinishfieldCoordinates() {
+	public Coordinate getFinishfieldCoordinates() {
 		int position = this.getFinishfieldPosition();
-	    int x = position % this.x;
-	    int y = position / this.x;
-	    return new int[] {x,y};
+	    return new Coordinate (position % this.width,position / this.width);
 		
 	}
 	
@@ -109,18 +105,18 @@ public class Board {
 	}
 	
 	/**
-	 * Returns the x Dimension of the board
-	 * @return x dimension of the board
+	 * Returns the width Dimension of the board
+	 * @return width dimension of the board
 	 */
-	public int getX() {
-		return x;
+	public int getWidth() {
+		return width;
 	}
 	
 	/**
-	 * Returns the y Dimension of the board
-	 * @return y dimension of the board
+	 * Returns the height Dimension of the board
+	 * @return height dimension of the board
 	 */
-	public int getY() {
-		return y;
+	public int getHeight() {
+		return height;
 	}
 }

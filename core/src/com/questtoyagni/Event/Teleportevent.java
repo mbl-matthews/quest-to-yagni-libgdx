@@ -9,6 +9,7 @@ import java.util.Random;
 
 import com.questtoyagni.Board.Board;
 import com.questtoyagni.Player.Player;
+import com.questtoyagni.coordinates.Coordinate;
 
 public class Teleportevent extends Event{
 
@@ -37,22 +38,20 @@ public class Teleportevent extends Event{
 	 * @return returns teleport-msg as String
 	 */
 	public String teleportEvent(Player p,Board b) {
-		int x=new Random().nextInt(b.getX());
-		int y=new Random().nextInt(b.getY());
-		
-		
+		int x=new Random().nextInt(b.getWidth());
+		int y=new Random().nextInt(b.getHeight());
+		Coordinate randomPositon=new Coordinate(x,y);
     	// checks that the player is not teleportet to the Finishfield		
-		int []cordinatesFinish=b.getFinishfieldCoordinates();
-    	int xBoard=cordinatesFinish[0];
-    	int yBoard=cordinatesFinish[1];
+		Coordinate coordinatesFinish=b.getFinishfieldCoordinates();
     	
-		while(x+y==xBoard+yBoard) {
-			x=new Random().nextInt(b.getX());
-			y=new Random().nextInt(b.getY());
+		while(randomPositon.equals(coordinatesFinish)) {
+			x=new Random().nextInt(b.getWidth());
+			y=new Random().nextInt(b.getHeight());
+			randomPositon=new Coordinate(x,y);
 		}
 		
 		
-		p.setPosition(new int [] {x,y});
+		p.setPosition(new Coordinate(x,y));
 		return ("You got Teleported");
 	}
 }
