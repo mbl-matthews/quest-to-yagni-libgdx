@@ -39,7 +39,7 @@ public class Board {
 	 */
 	public int getStartfieldPosition() {
 		for(int i = 0; i<fields.size();i++) {
-			if(fields.get(i).getType().equals("Startfield")) {
+			if(fields.get(i).getType().equals(Startfield.type)) {
 				return i;
 			}
 		}
@@ -63,7 +63,7 @@ public class Board {
 	 */
 	public int getFinishfieldPosition() {
 		for(int i = 0; i<fields.size();i++) {
-			if(fields.get(i).getType().equals("Finishfield")) {
+			if(fields.get(i).getType().equals(Finishfield.type)) {
 				return i;
 			}
 		}
