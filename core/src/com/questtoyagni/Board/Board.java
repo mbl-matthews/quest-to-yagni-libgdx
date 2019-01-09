@@ -81,6 +81,10 @@ public class Board {
 		
 	}
 	
+	/**
+	 * @param field  field
+	 * @return index of the current field
+	 */
 	public int getPosFromField(Field field)
     {
         for(int i=0; i<fields.size(); i++){
