@@ -5,16 +5,17 @@
 package com.questtoyagni.Player;
 
 import com.questtoyagni.Board.Board;
+import com.questtoyagni.coordinates.Coordinate;
 import com.questtoyagni.coordinates.Directions;
 
 
 public class Player {
 
-	String name;
-	int xPos,yPos;
-	Board board = null;
-	int width=0;
-	boolean[] walls=null;
+	private String name;
+	private Coordinate pos;
+	//int xPos,yPos;
+	private Board board = null;
+	private boolean[] walls=null;
 	
 	/**
 	 * 
@@ -23,13 +24,11 @@ public class Player {
 	 * @param yPos yPos of start position
 	 * @param board board id 
 	 */
-	public Player(String name,int xPos,int yPos,Board board) {
-		this.xPos=xPos;
-		this.yPos=yPos;
+	public Player(String name,Coordinate pos,Board board) {
+		this.pos = pos;
 		this.name=name;
-		walls=board.changePositionAndGetWallsAroundNewPosition(width*yPos+xPos);
-		this.board= board;
-		this.width=board.getX();
+		this.board=board;
+		walls=board.changePositionAndGetWallsAroundNewPosition(getPosition());
 	}
 	
 
@@ -41,23 +40,23 @@ public class Player {
 	public boolean move(String direction) {
 		
 		if(Directions.NORTH.equalsIgnoreCase(direction)&& walls[0]==false) {
-			yPos-=1;
-			walls=board.changePositionAndGetWallsAroundNewPosition(width*yPos+xPos);
+			pos.moveY(-1);
+			walls=board.changePositionAndGetWallsAroundNewPosition(getPosition());
 			return true;
 		}
 		else if(Directions.SOUTH.equalsIgnoreCase(direction)&& walls[1]==false) {
-			yPos+=1;
-			walls=board.changePositionAndGetWallsAroundNewPosition(width*yPos+xPos);
+			pos.moveY(1);
+			walls=board.changePositionAndGetWallsAroundNewPosition(getPosition());
 			return true;
 		}	
 		else if(Directions.WEST.equalsIgnoreCase(direction)&& walls[2]==false) {
-			xPos-=1;
-			walls=board.changePositionAndGetWallsAroundNewPosition(width*yPos+xPos);
+			pos.moveX(-1);
+			walls=board.changePositionAndGetWallsAroundNewPosition(getPosition());
 			return true;
 		}	
 		else if(Directions.EAST.equalsIgnoreCase(direction)&& walls[3]==false){
-			xPos+=1;
-			walls=board.changePositionAndGetWallsAroundNewPosition(width*yPos+xPos);
+			pos.moveX(1);
+			walls=board.changePositionAndGetWallsAroundNewPosition(getPosition());
 			return true;
 		}
 		return false;
@@ -68,22 +67,21 @@ public class Player {
 	 * @return returns index of the players position
 	 */
 	public int getPosition(){
-		return width*yPos+xPos;
+		return board.getWidth()*pos.getY()+pos.getX();
 	}
 	/**
 	 * 
-	 * @return returns coordinates of the player as int[]={xPos,yPos}
+	 * @return returns coordinates of the player 
 	 */
-	public int[] getCoordinates(){
-		return new int[] {xPos,yPos};
+	public Coordinate getCoordinates(){
+		return pos;
 	}
 	
 	/** 
 	 * set position of a player
 	 */
-	public void setPosition(int[] position) {
-		xPos=position[0];
-		yPos=position[1];
+	public void setPosition(Coordinate position) {
+		this.pos=position;
 	}
 	/**
 	 * returns name of the player
