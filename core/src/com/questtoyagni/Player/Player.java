@@ -5,6 +5,7 @@
 package com.questtoyagni.Player;
 
 import com.questtoyagni.Board.Board;
+import com.questtoyagni.coordinates.Directions;
 
 public class Player {
 
@@ -38,22 +39,22 @@ public class Player {
 	 */
 	public boolean move(String direction) {
 		
-		if(direction.toLowerCase().equals("north")&& walls[0]==false) {
+		if(Directions.NORTH.equalsIgnoreCase(direction)&& walls[0]==false) {
 			yPos-=1;
 			walls=board.changePositionAndGetWallsAroundNewPosition(width*yPos+xPos);
 			return true;
 		}
-		else if(direction.toLowerCase().equals("south")&& walls[1]==false) {
+		else if(Directions.SOUTH.equalsIgnoreCase(direction)&& walls[1]==false) {
 			yPos+=1;
 			walls=board.changePositionAndGetWallsAroundNewPosition(width*yPos+xPos);
 			return true;
 		}	
-		else if(direction.toLowerCase().equals("west")&& walls[2]==false) {
+		else if(Directions.WEST.equalsIgnoreCase(direction)&& walls[2]==false) {
 			xPos-=1;
 			walls=board.changePositionAndGetWallsAroundNewPosition(width*yPos+xPos);
 			return true;
 		}	
-		else if(direction.toLowerCase().equals("east")&& walls[3]==false){
+		else if(Directions.EAST.equalsIgnoreCase(direction)&& walls[3]==false){
 			xPos+=1;
 			walls=board.changePositionAndGetWallsAroundNewPosition(width*yPos+xPos);
 			return true;

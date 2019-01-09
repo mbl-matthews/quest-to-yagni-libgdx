@@ -13,7 +13,7 @@ import com.questtoyagni.Event.Event;
 import com.questtoyagni.Event.Hintevent;
 import com.questtoyagni.Event.Teleportevent;
 import com.questtoyagni.Field.Eventfield;
-import com.questtoyagni.Field.Field;
+import com.questtoyagni.coordinates.Directions;
 import com.questtoyagni.Field.Finishfield;
 
 public class InputController {
@@ -54,7 +54,7 @@ public class InputController {
             }
         }*/
         
-        if (eingabe.equalsIgnoreCase("North") || eingabe.equalsIgnoreCase("South") || eingabe.equalsIgnoreCase("West") || eingabe.equalsIgnoreCase("East")) {
+        if (Directions.NORTH.equalsIgnoreCase(eingabe) || Directions.SOUTH.equalsIgnoreCase(eingabe) || Directions.WEST.equalsIgnoreCase(eingabe) || Directions.EAST.equalsIgnoreCase(eingabe)) {
             boolean ausgabe = p.move(eingabe);
             if (!ausgabe) {
                 System.out.println("Can't move " + eingabe);
