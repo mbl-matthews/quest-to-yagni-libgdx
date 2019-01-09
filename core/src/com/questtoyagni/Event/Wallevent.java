@@ -7,6 +7,7 @@ package com.questtoyagni.Event;
 import com.questtoyagni.Board.Board;
 import com.questtoyagni.Field.Field;
 import com.questtoyagni.Player.Player;
+import com.questtoyagni.coordinates.Directions;
 
 public class Wallevent extends Event{
 	 /**
