@@ -7,6 +7,7 @@ package com.questtoyagni.Player;
 import com.questtoyagni.Board.Board;
 import com.questtoyagni.coordinates.Directions;
 
+
 public class Player {
 
 	String name;
