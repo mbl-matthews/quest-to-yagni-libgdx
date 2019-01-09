@@ -34,13 +34,13 @@ public class Wallevent extends Event{
 	 * @return returns wall-msg as String
 	 */
 	public String wallEvent(Player p, Board b) {
-		String output = "walls in following directions:";
+		String output = "walls in following directions: ";
 		Field field=b.getField(p.getPosition());
 		boolean[] walls=field.getWalls();
-		if(walls[0]) output+=" north";
-		if(walls[1]) output+=" south";
-		if(walls[2]) output+=" west";
-		if(walls[3]) output+=" east";
+		if(walls[0]) output+=Directions.NORTH.toString();
+		if(walls[1]) output+=Directions.SOUTH.toString();
+		if(walls[2]) output+=Directions.WEST.toString();
+		if(walls[3]) output+=Directions.EAST.toString();
 		return output;
 	}
 }

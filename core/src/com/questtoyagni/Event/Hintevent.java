@@ -6,6 +6,7 @@ package com.questtoyagni.Event;
 
 import com.questtoyagni.Board.Board;
 import com.questtoyagni.Player.Player;
+import com.questtoyagni.coordinates.Directions;
 
 public class Hintevent extends Event{
 
@@ -47,17 +48,17 @@ public class Hintevent extends Event{
     	int y=yBoard-yPlayer;
     	String finish = "";
     	if(x<0) {
-    		finish=" West";
+    		finish=Directions.WEST.toString();
     	}
     	else if(x>0) {
-    		finish=" East";
+    		finish=Directions.EAST.toString();
     	}
     	if(y<0) {
-    		finish+=" North";
+    		finish+=Directions.NORTH.toString();
     	}
     	else if(y>0) {
-    		finish+=" South";
+    		finish+=Directions.SOUTH.toString();
     	}
-    	return "The finish is"+ finish + " from your position";
+    	return "The finish is "+ finish + " from your position";
     }
 }
