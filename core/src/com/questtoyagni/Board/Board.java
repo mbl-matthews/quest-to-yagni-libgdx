@@ -14,7 +14,6 @@ import com.questtoyagni.coordinates.Coordinate;
 import com.questtoyagni.reader.boardReader;
 
 public class Board {
-	
 	private ArrayList<Field> fields = new ArrayList<Field>();
 	private int width;
 	private int height;
