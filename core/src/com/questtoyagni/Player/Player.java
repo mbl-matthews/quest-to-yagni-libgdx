@@ -1,5 +1,5 @@
 /**
- * @author: Lukas H
+ * @author: Lukas H,TimoK
  */
 
 package com.questtoyagni.Player;
