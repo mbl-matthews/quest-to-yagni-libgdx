@@ -48,7 +48,7 @@ public class MenuScreen implements Screen {
         game.batch.setProjectionMatrix(gamecam.combined); //Es soll nur das gerendert werden, was die Kamera sieht
         menu.stage.draw();
         game.batch.begin();
-        game.batch.draw(texture,0,500,1920,1920);
+        game.batch.draw(texture,0,0,200,200);
         game.batch.end();
     }
 
