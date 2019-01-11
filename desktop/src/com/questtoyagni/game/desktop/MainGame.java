@@ -1,4 +1,5 @@
 /**
+ * Initalisiert das Spiel mithilfe der libgdx-library
  * @author Levent K.
  */
 
@@ -8,8 +9,8 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.questtoyagni.game.QuestToYagni;
 
-public class MainMenu {
-	public static void mainMenu (int width, int height, boolean fullscreen) {
+public class MainGame {
+	public static void mainGame (int width, int height, boolean fullscreen) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		config.width = width;
 		config.height = height;
