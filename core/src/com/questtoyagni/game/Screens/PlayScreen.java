@@ -12,25 +12,25 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.questtoyagni.game.QuestToYagni;
-import com.questtoyagni.game.Scenes.Hud;
+import com.questtoyagni.game.Scenes.GameOverlay;
 
 public class PlayScreen implements Screen {
     private QuestToYagni game;
     Texture texture;
     private OrthographicCamera gamecam; //Für Viewport
     private Viewport gameport;
-    private Hud hud;
+    private GameOverlay gameoverlay;
 
     /**
-     * Konstruktor von Playscreen
-     * @param game - Objekt des Spiels
-     */
+     * PlayScreen Konstruktor
+     * */
     public PlayScreen(QuestToYagni game){
         this.game = game;
-        texture = new Texture("logo_trans.png");
+        //System.out.println(new File("..\\core\\assets\\logo_trans.png"));
+        texture = new Texture("..\\core\\assets\\logo_trans.png");
         gamecam = new OrthographicCamera();
         gameport = new FitViewport(QuestToYagni.V_WIDTH,QuestToYagni.V_HEIGHT,gamecam);
-        hud = new Hud(game.batch);
+        gameoverlay = new GameOverlay(game.batch);
     }
 
     @Override
@@ -45,10 +45,10 @@ public class PlayScreen implements Screen {
     public void render(float delta) {
         Gdx.gl.glClearColor(1,1,1,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        game.batch.setProjectionMatrix(hud.stage.getCamera().combined); //Es soll nur das gerendert werden, was die Kamera sieht
-        hud.stage.draw();
+        game.batch.setProjectionMatrix(gamecam.combined); //Es soll nur das gerendert werden, was die Kamera sieht
+        gameoverlay.stage.draw();
         game.batch.begin();
-        game.batch.draw(texture,0,0,1920,1920);
+        game.batch.draw(texture,0,0,200,200);
         game.batch.end();
     }
 
@@ -65,14 +65,6 @@ public class PlayScreen implements Screen {
     @Override
     public void pause() {
 
-    }
-
-    /**
-     * Aktualisiert den HUD Screen
-     * @param dt - Zeitdifferenz zwischen dem letzten Aufruf von update() und dem jetzigen
-     */
-    public void update(float dt){
-        hud.update(dt);
     }
 
     @Override

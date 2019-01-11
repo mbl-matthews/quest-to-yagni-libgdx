@@ -20,9 +20,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.questtoyagni.game.QuestToYagni;
-import com.questtoyagni.game.Screens.PlayScreen;
 
-public class Menu {
+public class GameOverlay {
     public Stage stage;
     private Viewport viewport;
     TextButton button;
@@ -33,9 +32,9 @@ public class Menu {
     FileHandle file = Gdx.files.local("..\\core\\assets\\arial.fnt");
 
     /**
-     * @param sb - SpriteBatch auf welchem das Hauptmenü abgebildet werden soll
+     * @param sb - SpriteBatch auf welchem das Spiel abbilden soll
      */
-    public Menu(SpriteBatch sb){
+    public GameOverlay(SpriteBatch sb){
         viewport = new FitViewport(QuestToYagni.V_WIDTH,QuestToYagni.V_WIDTH,new OrthographicCamera());
         stage = new Stage(viewport,sb);
         Gdx.input.setInputProcessor(stage);

@@ -12,7 +12,6 @@ import java.awt.Image;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
-import com.questtoyagni.game.desktop.*;
 
 import javax.swing.border.LineBorder;
 import java.awt.event.ActionListener;
@@ -122,7 +121,7 @@ public class Launcher extends JFrame {
 				width = Integer.parseInt(widthTextbox.getText());
 				height = Integer.parseInt(heightTextbox.getText());
 			} catch (NumberFormatException nfe) {
-				MainMenu.mainMenu(1280, 720, false);
+				MainGame.mainGame(1280, 720, false);
 				//JOptionPane.showMessageDialog((Component)thisFrame, "Both Values need to be a full number!", "Wrong Resolution", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
@@ -132,7 +131,7 @@ public class Launcher extends JFrame {
 				return;
 			}
 			
-			MainMenu.mainMenu(width, height, fullscreen);
+			MainGame.mainGame(width, height, fullscreen);
 			
 		}
 		

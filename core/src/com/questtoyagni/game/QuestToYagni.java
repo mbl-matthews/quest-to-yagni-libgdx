@@ -9,7 +9,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.questtoyagni.game.Screens.MenuScreen;
 import com.questtoyagni.game.Screens.PlayScreen;
 
 public class QuestToYagni extends Game {
@@ -18,8 +17,8 @@ public class QuestToYagni extends Game {
 	
 	
 	
-	public static final int V_WIDTH = 1920;
-	public static final int V_HEIGHT = 1080;
+	public static final int V_WIDTH = 1280;
+	public static final int V_HEIGHT = 720;
 
 
 	Texture img;
@@ -31,7 +30,7 @@ public class QuestToYagni extends Game {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		setScreen(new MenuScreen(this));
+		setScreen(new PlayScreen(this));
 		music = Gdx.audio.newMusic(Gdx.files.internal("..\\core\\assets\\maintheme.mp3"));
 	}
 
