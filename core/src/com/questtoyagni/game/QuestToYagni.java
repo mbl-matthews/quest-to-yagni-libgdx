@@ -6,9 +6,13 @@ package com.questtoyagni.game;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.questtoyagni.Board.Board;
+import com.questtoyagni.Player.Player;
+import com.questtoyagni.coordinates.Coordinate;
 import com.questtoyagni.game.Screens.PlayScreen;
 
 public class QuestToYagni extends Game {
@@ -23,14 +27,32 @@ public class QuestToYagni extends Game {
 
 	Texture img;
 	Music music;
+	PlayScreen playscreen;
+
+	Board board;
+	Player player;
+	int boardwidth;
+	int boardheight;
+
+	public QuestToYagni(int boardwidth, int boardheight){
+		this.boardwidth = boardwidth;
+		this.boardheight = boardheight;
+	}
 
 	/**
 	 * Initalisiert ein SpriteBatch worauf quasi die GUI gezeichnet wird. Außerdem wird das Menu Screen und die Musik initalisiert und geladen.
 	 */
 	@Override
 	public void create () {
+		//Game Logic
+		this.board = new Board(boardwidth,boardheight);
+		Coordinate start = board.getStartfieldCoordinates();
+		this.player = new Player("Player", start,board);
+
+		//GDX Logic
 		batch = new SpriteBatch();
-		setScreen(new PlayScreen(this));
+		this.playscreen = new PlayScreen(this);
+		setScreen(this.playscreen);
 		music = Gdx.audio.newMusic(Gdx.files.internal("..\\core\\assets\\maintheme.mp3"));
 	}
 

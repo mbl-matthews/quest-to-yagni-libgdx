@@ -15,6 +15,6 @@ public class MainGame {
 		config.width = width;
 		config.height = height;
 		config.fullscreen = fullscreen;
-		new LwjglApplication(new QuestToYagni(), config);
+		LwjglApplication gameapplication = new LwjglApplication(new QuestToYagni(), config);
 	}
 }
