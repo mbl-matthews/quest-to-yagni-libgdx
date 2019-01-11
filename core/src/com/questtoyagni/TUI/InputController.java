@@ -27,8 +27,8 @@ public class InputController {
         p = new Player("Player", start, board);
     }
     /**
-     * get an input and moves the Player in that direction,also checks if there is a event on the field
-     * @return if the game is finished or not
+     * get an input and moves the Player in that direction, also checks if there is a event on the field
+     * @return if game finished or not
      */
     public int eingabe() {
         String eingabe = null;
