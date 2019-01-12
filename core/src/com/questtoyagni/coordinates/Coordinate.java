@@ -1,12 +1,7 @@
-/**
- * 
- * @author TimoK
- *
- */
-
 package com.questtoyagni.coordinates;
 /**
  * Represents the position in a 2 dimensional world
+ * @author Timo K
  */
 public class Coordinate {
 	private int x;

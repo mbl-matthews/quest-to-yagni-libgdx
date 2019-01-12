@@ -1,18 +1,16 @@
-/**
- * @author: Mathis B
- */
 
 package com.questtoyagni.Board;
 
 import java.util.ArrayList;
-import com.questtoyagni.Event.*;
 import com.questtoyagni.Field.*;
-//import GUI.*;
-import com.questtoyagni.Player.*;
-import com.questtoyagni.TUI.*;
 import com.questtoyagni.coordinates.Coordinate;
 import com.questtoyagni.reader.boardReader;
 
+/**
+ *  @author: Mathis B
+ *	represents the board using width and height to determinate the size
+ *	the board itself is organized in Field-objects
+ */
 public class Board {
 	private ArrayList<Field> fields = new ArrayList<Field>();
 	private int width;

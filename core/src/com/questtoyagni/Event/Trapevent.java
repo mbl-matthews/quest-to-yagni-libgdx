@@ -1,12 +1,13 @@
-/**
- * @author: Lukas H
- */
 
 package com.questtoyagni.Event;
 
 import com.questtoyagni.Board.Board;
 import com.questtoyagni.Player.Player;
 
+/**
+ * trap-event, triggers a trap event
+ * @author: Lukas H
+ */
 public class Trapevent extends Event{
 
     /**

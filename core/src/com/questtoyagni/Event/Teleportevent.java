@@ -1,8 +1,3 @@
-/**
- * @author: Timo K
-   @author: Lukas H
- */
-
 package com.questtoyagni.Event;
 
 import java.util.Random;
@@ -10,6 +5,11 @@ import java.util.Random;
 import com.questtoyagni.Board.Board;
 import com.questtoyagni.Player.Player;
 import com.questtoyagni.coordinates.Coordinate;
+/**
+ * teleport-event, teleport the player to a random position on the board
+ * @author: Timo K
+ * @author: Lukas H
+ */
 
 public class Teleportevent extends Event{
 

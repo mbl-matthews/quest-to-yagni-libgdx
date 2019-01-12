@@ -1,14 +1,13 @@
-/**
- * @author: Timo K
- */
-
 package com.questtoyagni.Event;
 
 import com.questtoyagni.Board.Board;
 import com.questtoyagni.Player.Player;
 import com.questtoyagni.coordinates.Coordinate;
 import com.questtoyagni.coordinates.Directions;
-
+/**
+ * hint-event, prints the direction of the finish-field
+ * @author: Timo K
+ */
 public class Hintevent extends Event{
 
     /**
