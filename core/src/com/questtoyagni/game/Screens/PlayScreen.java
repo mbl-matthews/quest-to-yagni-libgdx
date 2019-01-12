@@ -81,7 +81,7 @@ public class PlayScreen implements Screen {
         //For Schleife cumms here
         for(int i=0; i<this.game.getBoard().getWidth(); i++){
             for(int j=0; j<this.game.getBoard().getHeight(); j++){
-                shape.rect((QuestToYagni.V_WIDTH/2)-kastengroesse*i,QuestToYagni.V_HEIGHT-kastengroesse*j,kastengroesse-5,kastengroesse-5);
+                shape.rect((QuestToYagni.V_WIDTH/2)-kastengroesse*(i-1.5f),QuestToYagni.V_HEIGHT-kastengroesse*j,kastengroesse-5,kastengroesse-5);
             }
         }
 
