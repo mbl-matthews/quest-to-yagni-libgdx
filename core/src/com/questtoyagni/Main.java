@@ -1,6 +1,6 @@
 package com.questtoyagni;
 
-import com.questtoyagni.TUI.InputController;
+import com.questtoyagni.tui.InputController;
 
 /**
  * text-based main calls the game input and ends the game after the finish-field is reached

@@ -18,7 +18,6 @@ public class InputReader {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
        String in = br.readLine();
-       br.close();
        return in;
     }
 }

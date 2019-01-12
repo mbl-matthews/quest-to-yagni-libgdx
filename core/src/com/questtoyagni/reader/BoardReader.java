@@ -3,16 +3,16 @@ package com.questtoyagni.reader;
 import java.io.*;
 import java.util.ArrayList;
 
-import com.questtoyagni.Event.Finishevent;
-import com.questtoyagni.Event.Hintevent;
-import com.questtoyagni.Event.Teleportevent;
-import com.questtoyagni.Event.Wallevent;
-import com.questtoyagni.Field.Eventfield;
-import com.questtoyagni.Field.Field;
-import com.questtoyagni.Field.Finishfield;
-import com.questtoyagni.Field.Playfield;
-import com.questtoyagni.Field.Startfield;
-import com.questtoyagni.Field.Walls;
+import com.questtoyagni.event.Finishevent;
+import com.questtoyagni.event.Hintevent;
+import com.questtoyagni.event.Teleportevent;
+import com.questtoyagni.event.Wallevent;
+import com.questtoyagni.field.Eventfield;
+import com.questtoyagni.field.Field;
+import com.questtoyagni.field.Finishfield;
+import com.questtoyagni.field.Playfield;
+import com.questtoyagni.field.Startfield;
+import com.questtoyagni.field.Walls;
 
 /**
  * reads a board-file and returns it as an object
