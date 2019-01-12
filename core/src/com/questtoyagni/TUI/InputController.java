@@ -17,6 +17,10 @@ public class InputController {
     private Board board;
     private Player p;
 
+    /**
+     * @param x width
+     * @param y height
+     */
     public InputController(int x, int y) {
         board = new Board(x,y);
         Coordinate start = board.getStartfieldCoordinates();
