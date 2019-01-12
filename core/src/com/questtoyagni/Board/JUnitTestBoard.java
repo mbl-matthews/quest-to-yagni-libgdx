@@ -1,6 +1,3 @@
-/**
- * @author: Mathis B
- */
 
 package com.questtoyagni.Board;
 
@@ -8,6 +5,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import com.questtoyagni.Player.Player;
+/**
+ * @author: Mathis B
+ */
 
 public class JUnitTestBoard {
 	Board board = new Board(5,7);

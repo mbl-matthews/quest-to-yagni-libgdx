@@ -1,7 +1,3 @@
-/**
- * @author: Levent K
- */
-
 package com.questtoyagni.game.Screens;
 
 import com.badlogic.gdx.Gdx;
@@ -17,6 +13,11 @@ import com.questtoyagni.Board.Board;
 import com.questtoyagni.game.QuestToYagni;
 import com.questtoyagni.game.Scenes.GameOverlay;
 
+/**
+ * renders the play-screen
+ * @author: Levent K
+ */
+
 public class PlayScreen implements Screen {
     private QuestToYagni game;
     Texture texture;
@@ -27,9 +28,9 @@ public class PlayScreen implements Screen {
     ShapeRenderer shape;
 
 
-    /**
-     * PlayScreen Konstruktor
-     * */
+  /**
+   * @param game QuestToYagni-object
+   */
     public PlayScreen(QuestToYagni game){
         this.game = game;
         //System.out.println(new File("..\\core\\assets\\logo_trans.png"));
@@ -47,7 +48,7 @@ public class PlayScreen implements Screen {
     }
 
     /**
-     * @param delta - Zeitdifferenz zwischen dem letzten Aufruf von render() und dem jetzigen
+     * @param delta - time-difference between last render() call and actual call
      */
     @Override
     public void render(float delta) {
@@ -89,9 +90,9 @@ public class PlayScreen implements Screen {
     }
 
     /**
-     * Aktualisiert das Bild, wenn die Größe des Fensters verändert wird
-     * @param width  -  neue Bildschirmbreite
-     * @param height -  neue Bildschirmhöhe
+     * refreshes the screen, if window-size is changed
+     * @param width  -  new screen-width
+     * @param height -  new screen-height
      */
     @Override
     public void resize(int width, int height) {

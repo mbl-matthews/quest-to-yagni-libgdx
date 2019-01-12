@@ -1,6 +1,3 @@
-/**
- * @author: Lukas H
- */
 
 package com.questtoyagni.Player;
 
@@ -10,6 +7,9 @@ import org.junit.jupiter.api.Test;
 import com.questtoyagni.Board.Board;
 import com.questtoyagni.Field.Walls;
 import com.questtoyagni.coordinates.Coordinate;
+/**
+ * @author: Lukas H
+ */
 
 public class JunitTestPlayer {
 

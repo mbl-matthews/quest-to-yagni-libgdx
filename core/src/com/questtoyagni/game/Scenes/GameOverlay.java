@@ -1,6 +1,3 @@
-/**
- * @author: Levent K
- */
 
 package com.questtoyagni.game.Scenes;
 
@@ -21,6 +18,13 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.questtoyagni.game.QuestToYagni;
 
+/**
+ *!!!!
+ *!!!! HALLO HIER FELT WAS WEHE DAS STEHT SO IN DER ABGABE !!!!!
+ *!!!!
+ * @author: Levent K
+ */
+
 public class GameOverlay {
     public Stage stage;
     private Viewport viewport;
@@ -32,7 +36,8 @@ public class GameOverlay {
     FileHandle file = Gdx.files.local("..\\core\\assets\\arial.fnt");
 
     /**
-     * @param sb - SpriteBatch auf welchem das Spiel abbilden soll
+     * 
+     * @param sb - SpriteBatch on which the game is portrayed
      */
     public GameOverlay(SpriteBatch sb){
         viewport = new FitViewport(QuestToYagni.V_WIDTH,QuestToYagni.V_WIDTH,new OrthographicCamera());

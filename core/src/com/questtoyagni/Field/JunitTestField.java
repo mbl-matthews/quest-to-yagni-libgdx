@@ -1,6 +1,3 @@
-/**
- * @author: Levent K
- */
 
 package com.questtoyagni.Field;
 
@@ -9,6 +6,9 @@ import com.questtoyagni.Event.Finishevent;
 import com.questtoyagni.Event.Trapevent;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+/**
+ * @author: Levent K
+ */
 
 class JunitTestField {
 
