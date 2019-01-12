@@ -75,7 +75,7 @@ public class Launcher extends JFrame {
 		controlPanel.setBackground(Color.GRAY);
 		controlPanel.setBounds(170, 135, 205, 115);
 		lowerPanel.add(controlPanel);
-		controlPanel.setLayout(null);
+		//controlPanel.setLayout(null);
 		
 		heightLabel = new JLabel("Height:");
 		heightLabel.setBounds(10, 35, 45, 20);
