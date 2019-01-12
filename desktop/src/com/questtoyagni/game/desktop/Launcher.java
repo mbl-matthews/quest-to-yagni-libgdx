@@ -17,7 +17,10 @@ import javax.swing.border.LineBorder;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
-
+/**
+ * Launcher who starts at begin. A window where you can select properties like window height, width etc.
+ * @author Mathis B., Levent K.
+ */
 public class Launcher extends JFrame {
 	
 	private BufferedImage headerImg = null;
