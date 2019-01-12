@@ -1,6 +1,7 @@
 package com.questtoyagni.game.screens;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
@@ -27,7 +28,7 @@ public class PlayScreen implements Screen {
     private GameOverlay gameoverlay;
     private Board board;
     private ShapeRenderer shape;
-    private Texture playerModel;
+    private Sprite playerModel;
 
   /**
    * @param game QuestToYagni-object
@@ -39,7 +40,7 @@ public class PlayScreen implements Screen {
         gamecam = new OrthographicCamera();
         gameport = new FitViewport(QuestToYagni.V_WIDTH,QuestToYagni.V_HEIGHT,gamecam);
         gameoverlay = new GameOverlay(game.batch);
-        playerModel = new Texture("..\\core\\assets\\player_coloured.png");
+        playerModel = new Sprite(new Texture("..\\core\\assets\\player_coloured.png"));
         //System.out.println("W:"+pM.getWidth()+" H:"+pM.getHeight());
         //playerModel = new Sprite(pM);
         //System.out.println("W:"+playerModel.getWidth()+" H:"+playerModel.getHeight());
@@ -95,14 +96,44 @@ public class PlayScreen implements Screen {
 
         shape.end();
         
-        float playerX = ((QuestToYagni.V_WIDTH/2)-(boardwidth/2)*kastengroesse)+kastengroesse*game.player.getCoordinates().getX();
-        float playerY = QuestToYagni.V_HEIGHT-kastengroesse*(game.player.getCoordinates().getY());
+        float playerX = (((QuestToYagni.V_WIDTH/2)-(boardwidth/2)*kastengroesse)+kastengroesse*game.player.getCoordinates().getX())+15;
+        float playerY = QuestToYagni.V_HEIGHT-kastengroesse*(game.player.getCoordinates().getY()-2)-20;
         
         game.batch.begin();
-        game.batch.draw(playerModel, playerX , playerY);
-        //playerModel.draw(game.batch);
-        //playerModel.setScale(0.58f,1f);
+        
+        //initial draw of player
+        playerModel.draw(game.batch);
+        if(playerModel.getX() == 0.0f && playerModel.getY() == 0.0f) {
+        	playerModel.setX(playerX);
+        	playerModel.setY(playerY);
+        }
+        playerModel.setSize(kastengroesse*0.645f,kastengroesse);
+        
+        //controls
+        if(Gdx.input.isKeyJustPressed(Input.Keys.UP)) {
+        	if(game.player.getCoordinates().getY() != 0) {
+        		playerModel.translateY(kastengroesse);
+        	}
+        }
+        if(Gdx.input.isKeyJustPressed(Input.Keys.DOWN)) {
+        	if(game.player.getCoordinates().getY() != game.getBoard().getHeight()) {
+        		playerModel.translateY(kastengroesse);
+        	}
+        }
+        if(Gdx.input.isKeyJustPressed(Input.Keys.LEFT)) {
+        	if(game.player.getCoordinates().getX() != 0) {
+        		playerModel.translateY(kastengroesse);
+        	}
+        }
+        if(Gdx.input.isKeyJustPressed(Input.Keys.RIGHT)) {
+        	if(game.player.getCoordinates().getY() != game.getBoard().getWidth()) {
+        		playerModel.translateY(kastengroesse);
+        	}
+        }
+        
         game.batch.end();
+        
+        
     }
 
     /**
