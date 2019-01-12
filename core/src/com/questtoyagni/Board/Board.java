@@ -103,7 +103,7 @@ public class Board {
 	 * @param pos Position of the new field
 	 * @return Array with the walls of the new field
 	 */
-	public boolean[] changePositionAndGetWallsAroundNewPosition(int pos) {
+	public Walls changePositionAndGetWallsAroundNewPosition(int pos) {
 		return fields.get(pos).getWalls();
 	}
 	

@@ -6,6 +6,7 @@ package com.questtoyagni.Event;
 
 import com.questtoyagni.Board.Board;
 import com.questtoyagni.Field.Field;
+import com.questtoyagni.Field.Walls;
 import com.questtoyagni.Player.Player;
 import com.questtoyagni.coordinates.Directions;
 
@@ -37,11 +38,11 @@ public class Wallevent extends Event{
 	public String wallEvent(Player p, Board b) {
 		String output = "walls in following directions: ";
 		Field field=b.getField(p.getPosition());
-		boolean[] walls=field.getWalls();
-		if(walls[0]) output+=Directions.NORTH.toString();
-		if(walls[1]) output+=Directions.SOUTH.toString();
-		if(walls[2]) output+=Directions.WEST.toString();
-		if(walls[3]) output+=Directions.EAST.toString();
+		Walls walls=field.getWalls();
+		if(walls.isNorth()) output+=Directions.NORTH.toString();
+		if(walls.isSouth()) output+=Directions.SOUTH.toString();
+		if(walls.isWest()) output+=Directions.WEST.toString();
+		if(walls.isEast()) output+=Directions.EAST.toString();
 		return output;
 	}
 }

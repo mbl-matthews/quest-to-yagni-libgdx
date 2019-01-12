@@ -10,19 +10,20 @@ package com.questtoyagni.Field;
 public abstract class Field {
     private int id;
     private String type;
-    private boolean WallAbove=false;
-    private boolean WallBottom=false;
-    private boolean WallLeft=false;
-    private boolean WallRight=false;
-
+    //private boolean WallAbove=false;
+    //private boolean WallBottom=false;
+    //private boolean WallLeft=false;
+    //private boolean WallRight=false;
+    private Walls walls;
 
     /**
      * @param id ID of Field Object, usually set by Board-Class
-     * @param wallArray Bool-Array for walls. [0] -> Above Wall, [1] -> Bottom Wall, [2] -> Left Wall, [3] -> Right Wall
+     * @param walls the Walls north,south,west,east
+     * @param type The type of the field
      */
-    public Field(int id, boolean[] wallArray, String type){
+    public Field(int id, Walls walls, String type){
         this.id = id;
-        this.setWalls(wallArray);
+        this.walls=walls;
         this.type=type;
     }
 
@@ -35,23 +36,17 @@ public abstract class Field {
     }
 
     /**
-     * Method parses a Bool-Array for walls and set the values to the objects attributes.
-     * @param wallArray Bool-Array for walls. [0] -> Above Wall, [1] -> Bottom Wall, [2] -> Left Wall, [3] -> Right Wall
+     * 
      */
-    private void setWalls(boolean[] wallArray){
-        if(wallArray.length == 4){
-            this.WallAbove=wallArray[0];
-            this.WallBottom=wallArray[1];
-            this.WallLeft=wallArray[2];
-            this.WallRight=wallArray[3];
-        }
+    private void setWalls(Walls walls){
+    	this.walls=walls;
     }
 
     /**
      * @return Bool-Array for walls. [0] -> Above Wall, [1] -> Bottom Wall, [2] -> Left Wall, [3] -> Right Wall
      */
-    public boolean[] getWalls(){
-        return new boolean[]{this.WallAbove,this.WallBottom,this.WallLeft,this.WallRight};
+    public Walls getWalls(){
+        return this.walls;
     }
 
     /**

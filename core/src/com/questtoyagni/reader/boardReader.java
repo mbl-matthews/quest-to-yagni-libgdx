@@ -17,6 +17,7 @@ import com.questtoyagni.Field.Field;
 import com.questtoyagni.Field.Finishfield;
 import com.questtoyagni.Field.Playfield;
 import com.questtoyagni.Field.Startfield;
+import com.questtoyagni.Field.Walls;
 
 
 public class boardReader {
@@ -34,20 +35,20 @@ public class boardReader {
 		for(int i = 0;i<allFields.length;i++) {
 			String[] token = allFields[i].split(",");
 			if(token[4].equals("start")) {
-				fields.add(new Startfield(i,new boolean[] {Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3])}));
+				fields.add(new Startfield(i,new Walls (Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3]))));
 			} else if (token[4].equals("finish")) {
-				fields.add(new Finishfield(i,new boolean[] {Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3])}, finisheventobject));
+				fields.add(new Finishfield(i,new Walls (Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3])), finisheventobject));
 			} else if (token[4].equals("hint")) {
 				Hintevent hinteventobject = new Hintevent(i, "hint");
-				fields.add(new Eventfield(i,new boolean[] {Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3])},hinteventobject));
+				fields.add(new Eventfield(i,new Walls (Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3])),hinteventobject));
 			}else if (token[4].equals("teleport")) {
 				Teleportevent teleporteventobject=new Teleportevent(i,"teleport");
-				fields.add(new Eventfield(i,new boolean[] {Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3])},teleporteventobject));
+				fields.add(new Eventfield(i,new Walls (Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3])),teleporteventobject));
 			}else if (token[4].equals("wall")) {
 				Wallevent walleventobject=new Wallevent(i,"wall");
-				fields.add(new Eventfield(i,new boolean[] {Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3])},walleventobject));
+				fields.add(new Eventfield(i,new Walls (Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3])),walleventobject));
 			}else {
-				fields.add(new Playfield(i,new boolean[] {Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3])}));
+				fields.add(new Playfield(i,new Walls (Boolean.parseBoolean(token[0]), Boolean.parseBoolean(token[1]),Boolean.parseBoolean(token[2]),Boolean.parseBoolean(token[3]))));
 			}
 		}
 		
