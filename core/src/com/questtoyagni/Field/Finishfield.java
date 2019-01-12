@@ -11,13 +11,14 @@ import com.questtoyagni.Field.Field;
 public class Finishfield extends Field{
 
 	public static final String type = "Finishfield";
-     Finishevent event;
+    private Finishevent event;
     /**
      * @param id ID of Field Object, usually set by Board-Class
-     * @param wallArray Bool-Array for walls. [0] -> Above Wall, [1] -> Bottom Wall, [2] -> Left Wall, [3] -> Right Wall
+     * @param walls the Walls north,south,west,east
+     * @param Finishevent 
      */
-    public Finishfield(int id, boolean[] wallArray, Finishevent eventobject){
-        super(id, wallArray, type);
+    public Finishfield(int id, Walls walls, Finishevent eventobject){
+        super(id, walls, type);
         this.event = eventobject;
 
     }

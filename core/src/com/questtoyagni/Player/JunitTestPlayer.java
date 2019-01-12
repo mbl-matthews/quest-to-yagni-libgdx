@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import com.questtoyagni.Board.Board;
+import com.questtoyagni.Field.Walls;
 import com.questtoyagni.coordinates.Coordinate;
 
 public class JunitTestPlayer {
@@ -33,11 +34,11 @@ public class JunitTestPlayer {
 		Assertions.assertEquals("Player1", p.getName(),"Der Name ist nicht richtig");
 	}
 	
-	/*@Test
+	@Test
 	void testWalls() {
 		Player p = new Player("Player1",new Coordinate(1,1),board );
-		Assertions.assertArrayEquals(new boolean[]{true,false,false,false}, p.walls, "Die Wände werden nicht übergen");
-	}*/
+		Assertions.assertEquals(new Walls(true,false,false,false), p.getWalls(), "Die Wände werden nicht übergen");
+	}
 	
 	@Test
 	void testPosition() {

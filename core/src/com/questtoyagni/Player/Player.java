@@ -5,6 +5,7 @@
 package com.questtoyagni.Player;
 
 import com.questtoyagni.Board.Board;
+import com.questtoyagni.Field.Walls;
 import com.questtoyagni.coordinates.Coordinate;
 import com.questtoyagni.coordinates.Directions;
 
@@ -15,7 +16,7 @@ public class Player {
 	private Coordinate pos;
 	//int xPos,yPos;
 	private Board board = null;
-	private boolean[] walls=null;
+	private Walls walls;
 	
 	/**
 	 * 
@@ -39,22 +40,22 @@ public class Player {
 	 */
 	public boolean move(String direction) {
 		
-		if(Directions.NORTH.equalsIgnoreCase(direction)&& walls[0]==false) {
+		if(Directions.NORTH.equalsIgnoreCase(direction)&& walls.isNorth()==false) {
 			pos.moveY(-1);
 			walls=board.changePositionAndGetWallsAroundNewPosition(getPosition());
 			return true;
 		}
-		else if(Directions.SOUTH.equalsIgnoreCase(direction)&& walls[1]==false) {
+		else if(Directions.SOUTH.equalsIgnoreCase(direction)&& walls.isSouth()==false) {
 			pos.moveY(1);
 			walls=board.changePositionAndGetWallsAroundNewPosition(getPosition());
 			return true;
 		}	
-		else if(Directions.WEST.equalsIgnoreCase(direction)&& walls[2]==false) {
+		else if(Directions.WEST.equalsIgnoreCase(direction)&& walls.isWest()==false) {
 			pos.moveX(-1);
 			walls=board.changePositionAndGetWallsAroundNewPosition(getPosition());
 			return true;
 		}	
-		else if(Directions.EAST.equalsIgnoreCase(direction)&& walls[3]==false){
+		else if(Directions.EAST.equalsIgnoreCase(direction)&& walls.isEast()==false){
 			pos.moveX(1);
 			walls=board.changePositionAndGetWallsAroundNewPosition(getPosition());
 			return true;
@@ -89,6 +90,10 @@ public class Player {
 	 */
 	public String getName() {
 		return name;
+	}
+	
+	public Walls getWalls() {
+		return walls;
 	}
 
 }

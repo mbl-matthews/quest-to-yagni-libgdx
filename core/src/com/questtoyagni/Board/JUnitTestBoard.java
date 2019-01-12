@@ -13,11 +13,10 @@ public class JUnitTestBoard {
 	Board board = new Board(5,7);
 	@Test
 	void testBoard() {
-		Assertions.assertEquals(true, board.changePositionAndGetWallsAroundNewPosition(5).length == 4,"Vier Wände sind vorhanden");
-		Assertions.assertArrayEquals(new boolean[] {true, false, true, true}, board.getField(5).getWalls());
-		Assertions.assertArrayEquals(new boolean[] {true, false, false, true}, board.changePositionAndGetWallsAroundNewPosition(4));
-		Assertions.assertEquals(true,board.getWidth()==5,"Falscher X-Wert.");
-		Assertions.assertEquals(true,board.getHeight()==7,"Falscher Y-Wert.");
+		Assertions.assertTrue(board.getField(5).getWalls().isNorth());
+		Assertions.assertTrue(board.changePositionAndGetWallsAroundNewPosition(4).isNorth());
+		Assertions.assertTrue(board.getWidth()==5,"Falscher X-Wert.");
+		Assertions.assertTrue(board.getHeight()==7,"Falscher Y-Wert.");
 	}
 	
 }
