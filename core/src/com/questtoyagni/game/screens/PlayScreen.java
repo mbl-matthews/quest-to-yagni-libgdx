@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
@@ -20,13 +21,13 @@ import com.questtoyagni.game.scenes.GameOverlay;
 
 public class PlayScreen implements Screen {
     private QuestToYagni game;
-    Texture texture;
+    private Texture texture;
     private OrthographicCamera gamecam; //Für Viewport
     private Viewport gameport;
     private GameOverlay gameoverlay;
-    Board board;
-    ShapeRenderer shape;
-
+    private Board board;
+    private ShapeRenderer shape;
+    private Texture playerModel;
 
   /**
    * @param game QuestToYagni-object
@@ -38,7 +39,10 @@ public class PlayScreen implements Screen {
         gamecam = new OrthographicCamera();
         gameport = new FitViewport(QuestToYagni.V_WIDTH,QuestToYagni.V_HEIGHT,gamecam);
         gameoverlay = new GameOverlay(game.batch);
-
+        playerModel = new Texture("..\\core\\assets\\player_coloured.png");
+        //System.out.println("W:"+pM.getWidth()+" H:"+pM.getHeight());
+        //playerModel = new Sprite(pM);
+        //System.out.println("W:"+playerModel.getWidth()+" H:"+playerModel.getHeight());
         shape = new ShapeRenderer();
     }
 
@@ -54,6 +58,9 @@ public class PlayScreen implements Screen {
     public void render(float delta) {
         Gdx.gl.glClearColor(1,1,1,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        
+        
+        
         game.batch.setProjectionMatrix(gamecam.combined); //Es soll nur das gerendert werden, was die Kamera sieht
         gameoverlay.stage.draw();
         game.batch.begin();
@@ -87,6 +94,15 @@ public class PlayScreen implements Screen {
         }
 
         shape.end();
+        
+        float playerX = ((QuestToYagni.V_WIDTH/2)-(boardwidth/2)*kastengroesse)+kastengroesse*game.player.getCoordinates().getX();
+        float playerY = QuestToYagni.V_HEIGHT-kastengroesse*(game.player.getCoordinates().getY());
+        
+        game.batch.begin();
+        game.batch.draw(playerModel, playerX , playerY);
+        //playerModel.draw(game.batch);
+        //playerModel.setScale(0.58f,1f);
+        game.batch.end();
     }
 
     /**

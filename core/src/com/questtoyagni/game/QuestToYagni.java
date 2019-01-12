@@ -29,8 +29,8 @@ public class QuestToYagni extends Game {
 	Music music;
 	PlayScreen playscreen;
 
-	Board board;
-	Player player;
+	public Board board;
+	public Player player;
 	int boardwidth;
 	int boardheight;
 
@@ -73,8 +73,8 @@ public class QuestToYagni extends Game {
 	 */
 	@Override
 	public void dispose () {
-		batch.dispose();
 		img.dispose();
+		batch.dispose();
 	}
 
 	/**
