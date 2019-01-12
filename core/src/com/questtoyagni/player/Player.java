@@ -1,10 +1,10 @@
 
-package com.questtoyagni.Player;
+package com.questtoyagni.player;
 
-import com.questtoyagni.Board.Board;
-import com.questtoyagni.Field.Walls;
+import com.questtoyagni.board.Board;
 import com.questtoyagni.coordinates.Coordinate;
 import com.questtoyagni.coordinates.Directions;
+import com.questtoyagni.field.Walls;
 
 /**
  * Represents the player of the game and lets him move

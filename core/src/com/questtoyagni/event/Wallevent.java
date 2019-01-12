@@ -1,10 +1,10 @@
-package com.questtoyagni.Event;
+package com.questtoyagni.event;
 
-import com.questtoyagni.Board.Board;
-import com.questtoyagni.Field.Field;
-import com.questtoyagni.Field.Walls;
-import com.questtoyagni.Player.Player;
+import com.questtoyagni.board.Board;
 import com.questtoyagni.coordinates.Directions;
+import com.questtoyagni.field.Field;
+import com.questtoyagni.field.Walls;
+import com.questtoyagni.player.Player;
 
 /**
  * wall-event, prints walls around the players actual position

@@ -1,4 +1,4 @@
-package com.questtoyagni.Field;
+package com.questtoyagni.field;
 
 /**
  *  represents the walls around a field-object as 4 walls(n,s,w,e)

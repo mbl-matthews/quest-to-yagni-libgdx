@@ -1,4 +1,4 @@
-package com.questtoyagni.game.Screens;
+package com.questtoyagni.game.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
@@ -9,9 +9,9 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import com.questtoyagni.Board.Board;
+import com.questtoyagni.board.Board;
 import com.questtoyagni.game.QuestToYagni;
-import com.questtoyagni.game.Scenes.GameOverlay;
+import com.questtoyagni.game.scenes.GameOverlay;
 
 /**
  * renders the play-screen

@@ -1,12 +1,12 @@
 
-package com.questtoyagni.Player;
+package com.questtoyagni.player;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import com.questtoyagni.Board.Board;
-import com.questtoyagni.Field.Walls;
+import com.questtoyagni.board.Board;
 import com.questtoyagni.coordinates.Coordinate;
+import com.questtoyagni.field.Walls;
 /**
  * @author: Lukas H
  */

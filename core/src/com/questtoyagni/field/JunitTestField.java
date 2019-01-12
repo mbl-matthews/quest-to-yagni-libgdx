@@ -1,11 +1,12 @@
 
-package com.questtoyagni.Field;
+package com.questtoyagni.field;
 
-import com.questtoyagni.Event.Event;
-import com.questtoyagni.Event.Finishevent;
-import com.questtoyagni.Event.Trapevent;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import com.questtoyagni.event.Event;
+import com.questtoyagni.event.Finishevent;
+import com.questtoyagni.event.Trapevent;
 /**
  * @author: Levent K
  */

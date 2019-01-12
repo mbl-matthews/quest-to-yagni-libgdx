@@ -1,13 +1,13 @@
-package com.questtoyagni.TUI;
+package com.questtoyagni.tui;
 
 import com.questtoyagni.reader.*;
-import com.questtoyagni.Player.*;
-import com.questtoyagni.Board.*;
-import com.questtoyagni.Event.Event;
-import com.questtoyagni.Field.Eventfield;
+import com.questtoyagni.board.*;
 import com.questtoyagni.coordinates.Coordinate;
 import com.questtoyagni.coordinates.Directions;
-import com.questtoyagni.Field.Finishfield;
+import com.questtoyagni.event.Event;
+import com.questtoyagni.field.Eventfield;
+import com.questtoyagni.field.Finishfield;
+import com.questtoyagni.player.*;
 
 /**
  * text-based interface of the game

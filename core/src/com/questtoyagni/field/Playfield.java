@@ -1,6 +1,6 @@
-package com.questtoyagni.Field;
+package com.questtoyagni.field;
 
-import com.questtoyagni.Field.Field;
+import com.questtoyagni.field.Field;
 /**
  * A "normal" playing-field without any events
  * @author: Levent K

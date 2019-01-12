@@ -1,7 +1,7 @@
-package com.questtoyagni.Field;
+package com.questtoyagni.field;
 
-import com.questtoyagni.Event.Event;
-import com.questtoyagni.Field.Field;
+import com.questtoyagni.event.Event;
+import com.questtoyagni.field.Field;
 
 /**
  * A field which holds an event

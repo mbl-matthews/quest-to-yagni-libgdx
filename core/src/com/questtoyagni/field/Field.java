@@ -1,4 +1,4 @@
-package com.questtoyagni.Field;
+package com.questtoyagni.field;
 
 /**
  * Abstract class for field objects used by game logic

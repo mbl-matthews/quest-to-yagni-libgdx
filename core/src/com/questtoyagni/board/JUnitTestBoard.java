@@ -1,10 +1,10 @@
 
-package com.questtoyagni.Board;
+package com.questtoyagni.board;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import com.questtoyagni.Player.Player;
+import com.questtoyagni.player.Player;
 /**
  * @author: Mathis B
  */

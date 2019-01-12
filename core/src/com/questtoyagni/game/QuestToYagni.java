@@ -5,10 +5,10 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.questtoyagni.Board.Board;
-import com.questtoyagni.Player.Player;
+import com.questtoyagni.board.Board;
 import com.questtoyagni.coordinates.Coordinate;
-import com.questtoyagni.game.Screens.PlayScreen;
+import com.questtoyagni.game.screens.PlayScreen;
+import com.questtoyagni.player.Player;
 
 /**
  * main-screen shows actual state of the game-logic and controls the board

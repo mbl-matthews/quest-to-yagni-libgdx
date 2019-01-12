@@ -1,14 +1,14 @@
 
-package com.questtoyagni.Event;
+package com.questtoyagni.event;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import com.questtoyagni.Board.Board;
-import com.questtoyagni.Player.Player;
+import com.questtoyagni.board.Board;
 import com.questtoyagni.coordinates.Coordinate;
-import com.questtoyagni.Field.Eventfield;
-import com.questtoyagni.Field.Finishfield;
+import com.questtoyagni.field.Eventfield;
+import com.questtoyagni.field.Finishfield;
+import com.questtoyagni.player.Player;
 
 /**
  * @author: Lukas H

@@ -1,9 +1,10 @@
 
-package com.questtoyagni.Board;
+package com.questtoyagni.board;
 
 import java.util.ArrayList;
-import com.questtoyagni.Field.*;
+
 import com.questtoyagni.coordinates.Coordinate;
+import com.questtoyagni.field.*;
 import com.questtoyagni.reader.BoardReader;
 
 /**
