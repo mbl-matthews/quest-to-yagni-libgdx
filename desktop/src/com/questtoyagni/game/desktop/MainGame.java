@@ -5,7 +5,7 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.questtoyagni.game.QuestToYagni;
 
 /**
- * Initalisiert das Spiel mithilfe der libgdx-library
+ * Initialises the game with libgdx-library
  * @author Levent K.
  */
 public class MainGame {
