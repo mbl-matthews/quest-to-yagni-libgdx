@@ -61,7 +61,7 @@ public class PlayScreen implements Screen {
         game.batch.end();
 
         shape.begin(ShapeRenderer.ShapeType.Filled);
-        shape.setColor(new Color(0.3f,0.3f,0.3f,1));
+        shape.setColor(new Color(0.7f,0.7f,0.7f,1));
         //Kästchengröße berechnen
         int kastengroesse=0;
         if(QuestToYagni.V_WIDTH<QuestToYagni.V_HEIGHT){
@@ -78,6 +78,7 @@ public class PlayScreen implements Screen {
             }
         }
 
+        int boardwidth = this.game.getBoard().getWidth();
 
         //For Schleife cumms here
         for(int i=0; i<this.game.getBoard().getWidth(); i++){

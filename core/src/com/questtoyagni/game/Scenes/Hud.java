@@ -47,7 +47,7 @@ public class Hud {
         table.setFillParent(true); //Table hat größe der Stage
         BitmapFont font = new BitmapFont();
         font.getData().setScale(3,7);
-        countdownLabel = new Label(String.format("%03d",worldTimer), new Label.LabelStyle(font, Color.BLACK));
+        countdownLabel = new Label(String.format("%03d",+worldTimer), new Label.LabelStyle(font, Color.BLACK));
         titleLabel = new Label("QUEST TO YAGNI",new Label.LabelStyle(font, Color.BLACK));
         table.add(countdownLabel).expandX().padTop(1);
         table.add(titleLabel).expandX().padTop(1);
