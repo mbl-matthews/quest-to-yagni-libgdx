@@ -1,12 +1,13 @@
-/**
- * @author: Levent K
- */
 
 package com.questtoyagni.Field;
 
 import com.questtoyagni.Event.Event;
 import com.questtoyagni.Event.Finishevent;
 import com.questtoyagni.Field.Field;
+/**
+ * A field which holds the finish-event
+ * @author: Levent K
+ */
 
 public class Finishfield extends Field{
 
@@ -14,7 +15,7 @@ public class Finishfield extends Field{
     private Finishevent event;
     /**
      * @param id ID of Field Object, usually set by Board-Class
-     * @param walls the Walls north,south,west,east
+     * @param walls Walls-object
      * @param Finishevent 
      */
     public Finishfield(int id, Walls walls, Finishevent eventobject){
@@ -24,7 +25,6 @@ public class Finishfield extends Field{
     }
     
     /**
-     * 
      * @return returns event
      */
     public Event getEvent() {

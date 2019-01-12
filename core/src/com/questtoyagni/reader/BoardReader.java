@@ -1,13 +1,8 @@
-/**
- * @author: Mathis B
- */
-
 package com.questtoyagni.reader;
 
 import java.io.*;
 import java.util.ArrayList;
 
-import com.questtoyagni.Board.Board;
 import com.questtoyagni.Event.Finishevent;
 import com.questtoyagni.Event.Hintevent;
 import com.questtoyagni.Event.Teleportevent;
@@ -19,8 +14,12 @@ import com.questtoyagni.Field.Playfield;
 import com.questtoyagni.Field.Startfield;
 import com.questtoyagni.Field.Walls;
 
+/**
+ * reads a board-file and returns it as an object
+ * @author: Mathis B, Timo K
+ */
 
-public class boardReader {
+public class BoardReader {
 	
 	/**
 	 * Returns the Default Board which is a board with the Dimensions X=5 and Y=7

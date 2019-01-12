@@ -28,22 +28,15 @@ public abstract class Field {
         return this.id;
     }
 
-    /**
-     * 
-     */
-    private void setWalls(Walls walls){
-    	this.walls=walls;
-    }
-
-    /**
-     * @return Bool-Array for walls. [0] -> Above Wall, [1] -> Bottom Wall, [2] -> Left Wall, [3] -> Right Wall
-     */
+  /**
+   * 
+   * @return walls
+   */
     public Walls getWalls(){
         return this.walls;
     }
 
     /**
-     * 
      * @return returns type of field
      */
     public String getType(){

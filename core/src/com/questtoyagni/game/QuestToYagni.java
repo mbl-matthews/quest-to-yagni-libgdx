@@ -1,7 +1,3 @@
-/**
- * @author: Levent K
- */
-
 package com.questtoyagni.game;
 
 import com.badlogic.gdx.Game;
@@ -13,6 +9,11 @@ import com.questtoyagni.Board.Board;
 import com.questtoyagni.Player.Player;
 import com.questtoyagni.coordinates.Coordinate;
 import com.questtoyagni.game.Screens.PlayScreen;
+
+/**
+ * main-screen shows actual state of the game-logic and controls the board
+ * @author: Levent K
+ */
 
 public class QuestToYagni extends Game {
 	public SpriteBatch batch; 	//Public damit alles auf diesen SpriteBatch zugreift
@@ -39,7 +40,8 @@ public class QuestToYagni extends Game {
 	}
 
 	/**
-	 * Initalisiert ein SpriteBatch worauf quasi die GUI gezeichnet wird. Außerdem wird das Menu Screen und die Musik initalisiert und geladen.
+	 * initializes a SpriteBatch on which the GUI is drawn. 
+	 * also loads and initializes the Menu Screen and the music.
 	 */
 	@Override
 	public void create () {
@@ -56,7 +58,7 @@ public class QuestToYagni extends Game {
 	}
 
 	/**
-	 * Wird zum Programmstart ausgeführt. Kümmert sich um die Musik und darum, dass die GUI gerendert wird.
+	 * runs at program-start, it controls the music and renders  the GUI
 	 */
 	@Override
 	public void render () {
@@ -67,7 +69,7 @@ public class QuestToYagni extends Game {
 	}
 
 	/**
-	 * Schafft Speicherplatz, indem die Methode dispose() ausgeführt wird, wenn Elemente nicht mehr benötigt werden.
+	 * creates memory-space by calling the dispose() method, if the elements are not in use anymore
 	 */
 	@Override
 	public void dispose () {
@@ -75,6 +77,9 @@ public class QuestToYagni extends Game {
 		img.dispose();
 	}
 
+	/**
+	 * @return board
+	 */
     public Board getBoard() {
         return this.board;
     }

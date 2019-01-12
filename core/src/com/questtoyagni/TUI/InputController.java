@@ -1,22 +1,18 @@
-/**
- * @author: Timo K
- * @author: Lukas H
- */
-
 package com.questtoyagni.TUI;
 
-import java.io.*;
 import com.questtoyagni.reader.*;
 import com.questtoyagni.Player.*;
 import com.questtoyagni.Board.*;
 import com.questtoyagni.Event.Event;
-import com.questtoyagni.Event.Hintevent;
-import com.questtoyagni.Event.Teleportevent;
 import com.questtoyagni.Field.Eventfield;
 import com.questtoyagni.coordinates.Coordinate;
 import com.questtoyagni.coordinates.Directions;
 import com.questtoyagni.Field.Finishfield;
 
+/**
+ * text-based interface of the game
+ * @author: Timo K, Lukas H
+ */
 public class InputController {
     private Board board;
     private Player p;
@@ -35,8 +31,6 @@ public class InputController {
         //DEBUG
         System.out.println("DEBUG: Player Pos (x: "+p.getCoordinates().getX()+",y: "+p.getCoordinates().getY()+")");
         System.out.println("Where do you want to go?(North,South,West,East):");
-        //InputStreamReader isr = new InputStreamReader(System.in);
-        //BufferedReader br = new BufferedReader(isr);
         try {
             eingabe = InputReader.readString();
         } catch (Exception e) {

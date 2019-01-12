@@ -1,6 +1,3 @@
-/**
- * @author: Lukas H
- */
 
 package com.questtoyagni.Event;
 
@@ -12,6 +9,11 @@ import com.questtoyagni.Player.Player;
 import com.questtoyagni.coordinates.Coordinate;
 import com.questtoyagni.Field.Eventfield;
 import com.questtoyagni.Field.Finishfield;
+
+/**
+ * @author: Lukas H
+ */
+
 class JunitEvent {
 	
 	@Test

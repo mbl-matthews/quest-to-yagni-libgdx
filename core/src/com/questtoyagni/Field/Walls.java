@@ -1,8 +1,8 @@
 package com.questtoyagni.Field;
 
 /**
- * 4 walls North,south,west,east
- * @author TimoK
+ *  represents the walls around a field-object as 4 walls(n,s,w,e)
+ * @author Timo K
  */
 public class Walls {
 	private boolean north;
@@ -22,19 +22,35 @@ public class Walls {
 		this.west=west;
 		this.east=east;
 	}
+	/**
+	 * @return true if wall in this direction
+	 */
 	public boolean isNorth() {
 		return north;
 	}
+	/**
+	 * @return true if wall in this direction
+	 */
 	public boolean isSouth() {
 		return south;
 	}
+	/**
+	 * @return true if wall in this direction
+	 */
 	public boolean isWest() {
 		return west;
 	}
+	/**
+	 * @return true if wall in this direction
+	 */
 	public boolean isEast() {
 		return east;
 	}
 
+	/**
+	 * @param obj Walls-object
+	 * @return true if walls are equal
+	 */
 	public boolean equals(Walls obj) {
 		if (obj == null)
 			return false;

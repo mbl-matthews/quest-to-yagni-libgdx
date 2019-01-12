@@ -4,7 +4,7 @@ package com.questtoyagni.Board;
 import java.util.ArrayList;
 import com.questtoyagni.Field.*;
 import com.questtoyagni.coordinates.Coordinate;
-import com.questtoyagni.reader.boardReader;
+import com.questtoyagni.reader.BoardReader;
 
 /**
  *  @author: Mathis B
@@ -25,7 +25,7 @@ public class Board {
 		this.width = x;
 		this.height = y;
 		try {
-			this.fields = boardReader.getDefaultBoard();
+			this.fields = BoardReader.getDefaultBoard();
 		} catch(Exception e) {
 			System.out.print("Board-Datei konnte nicht gefunden werden!");
 		}

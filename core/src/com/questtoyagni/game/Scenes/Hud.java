@@ -1,7 +1,3 @@
-/**
- * @author: Levent K
- */
-
 package com.questtoyagni.game.Scenes;
 
 import com.badlogic.gdx.graphics.Color;
@@ -14,6 +10,13 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.questtoyagni.game.QuestToYagni;
+
+/**
+ *!!!!
+ *!!!! HALLO HIER FELT WAS WEHE DAS STEHT SO IN DER ABGABE !!!!!
+ *!!!!
+ * @author: Levent K
+ */
 
 public class Hud {
     public Stage stage;

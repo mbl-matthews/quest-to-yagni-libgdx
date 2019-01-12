@@ -1,6 +1,3 @@
-/**
- * @author: Lukas H,TimoK
- */
 
 package com.questtoyagni.Player;
 
@@ -9,12 +6,15 @@ import com.questtoyagni.Field.Walls;
 import com.questtoyagni.coordinates.Coordinate;
 import com.questtoyagni.coordinates.Directions;
 
-
+/**
+ * Represents the player of the game and lets him move
+ * holds his name,his position,the board of the actual game and the walls at his position
+ * @author: Lukas H,Timo K
+ */
 public class Player {
 
 	private String name;
 	private Coordinate pos;
-	//int xPos,yPos;
 	private Board board = null;
 	private Walls walls;
 	
@@ -92,6 +92,9 @@ public class Player {
 		return name;
 	}
 	
+	/**
+	 * @return current walls
+	 */
 	public Walls getWalls() {
 		return walls;
 	}
