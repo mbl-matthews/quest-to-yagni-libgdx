@@ -61,7 +61,7 @@ public class QuestToYagni extends Game {
 	@Override
 	public void render () {
 		super.render();
-		music.setVolume(0.25f);
+		music.setVolume(0.5f);
 		music.setLooping(true);
 		music.play();
 	}
