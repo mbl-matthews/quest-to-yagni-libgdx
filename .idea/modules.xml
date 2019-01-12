@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quest-to-yagni28.iml" filepath="$PROJECT_DIR$/.idea/modules/quest-to-yagni28.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/quest-to-yagni28.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/quest-to-yagni28.core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/quest-to-yagni28.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/quest-to-yagni28.core.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/quest-to-yagni28.core.test.iml" filepath="$PROJECT_DIR$/.idea/modules/core/quest-to-yagni28.core.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/quest-to-yagni28.desktop.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/quest-to-yagni28.desktop.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/quest-to-yagni28.desktop.main.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/quest-to-yagni28.desktop.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/quest-to-yagni28.desktop.test.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/quest-to-yagni28.desktop.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quest-to-yagnishittygit.iml" filepath="$PROJECT_DIR$/.idea/modules/quest-to-yagnishittygit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/quest-to-yagnishittygit.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/quest-to-yagnishittygit.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/quest-to-yagnishittygit.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/quest-to-yagnishittygit.core.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/quest-to-yagnishittygit.core.test.iml" filepath="$PROJECT_DIR$/.idea/modules/core/quest-to-yagnishittygit.core.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/quest-to-yagnishittygit.desktop.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/quest-to-yagnishittygit.desktop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/quest-to-yagnishittygit.desktop.main.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/quest-to-yagnishittygit.desktop.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/quest-to-yagnishittygit.desktop.test.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/quest-to-yagnishittygit.desktop.test.iml" />
     </modules>
   </component>
 </project>

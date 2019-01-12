@@ -65,7 +65,7 @@ public class QuestToYagni extends Game {
 		super.render();
 		music.setVolume(0.5f);
 		music.setLooping(true);
-		music.play();
+		//music.play();
 	}
 
 	/**
