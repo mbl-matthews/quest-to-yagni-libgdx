@@ -1,12 +1,11 @@
-/**
- * @author: Lukas H.
- */
-
 package com.questtoyagni.Event;
 
 import com.questtoyagni.Board.Board;
 import com.questtoyagni.Player.Player;
-
+/**
+ * finish-event, ends the game
+ * @author: Lukas H.
+ */
 public class Finishevent extends Event{
 
     /**

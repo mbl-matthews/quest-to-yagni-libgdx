@@ -1,12 +1,10 @@
-/**
- * @author Mathis B
- */
 package com.questtoyagni;
 
 import com.questtoyagni.TUI.InputController;
 
 /**
  * text-based main calls the game input and ends the game after the finishfield is reached
+ * @author Mathis B
  */
 public class Main {
 

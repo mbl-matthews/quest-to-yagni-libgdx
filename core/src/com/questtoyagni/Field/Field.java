@@ -1,19 +1,12 @@
-/**
- * @author: Levent K
- */
-
 package com.questtoyagni.Field;
 
 /**
- * Abstract class for field objects for game logic
+ * Abstract class for field objects used by game logic
+ * @author: Levent K
  */
 public abstract class Field {
     private int id;
     private String type;
-    //private boolean WallAbove=false;
-    //private boolean WallBottom=false;
-    //private boolean WallLeft=false;
-    //private boolean WallRight=false;
     private Walls walls;
 
     /**

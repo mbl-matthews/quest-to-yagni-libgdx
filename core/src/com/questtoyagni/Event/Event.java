@@ -1,12 +1,12 @@
-/**
- * @author: Lukas H.
- */
 
 package com.questtoyagni.Event;
 
 import com.questtoyagni.Board.Board;
 import com.questtoyagni.Player.Player;
-
+/**
+ *  abstract event class, triggers event method
+ *  @author: Lukas H.
+ */
 public abstract class Event{
     private int id;
     private String name;

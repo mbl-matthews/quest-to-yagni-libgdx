@@ -1,7 +1,3 @@
-/**
- * @author: Lukas H
- */
-
 package com.questtoyagni.Event;
 
 import com.questtoyagni.Board.Board;
@@ -10,6 +6,10 @@ import com.questtoyagni.Field.Walls;
 import com.questtoyagni.Player.Player;
 import com.questtoyagni.coordinates.Directions;
 
+/**
+ * wall-event, prints walls around the players actual position
+ * @author: Lukas H
+ */
 public class Wallevent extends Event{
 	 /**
      * @param id    ID of Event
