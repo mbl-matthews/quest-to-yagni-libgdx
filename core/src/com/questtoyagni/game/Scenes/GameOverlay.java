@@ -40,7 +40,7 @@ public class GameOverlay {
         Gdx.input.setInputProcessor(stage);
         font = new BitmapFont(file);
         skin = new Skin();
-
+        /*
         Table table = new Table();
         table.bottom().pad(50); //Tabelle wird zentriert ausgerichtet
         table.setFillParent(true); //Table hat größe der Stage
@@ -66,6 +66,7 @@ public class GameOverlay {
 
         //Tabelle zur Stage hinzurfügen
         stage.addActor(table);
+        */
 
     }
 

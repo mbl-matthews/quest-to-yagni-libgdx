@@ -6,7 +6,6 @@ package com.questtoyagni.game;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -75,4 +74,8 @@ public class QuestToYagni extends Game {
 		batch.dispose();
 		img.dispose();
 	}
+
+    public Board getBoard() {
+        return this.board;
+    }
 }
