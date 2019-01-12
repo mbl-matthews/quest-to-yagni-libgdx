@@ -10,6 +10,7 @@ import com.questtoyagni.reader.boardReader;
  *  @author: Mathis B
  *	represents the board using width and height to determinate the size
  *	the board itself is organized in Field-objects
+ *	Width/Height can't be bigger than 15.
  */
 public class Board {
 	private ArrayList<Field> fields = new ArrayList<Field>();
@@ -22,8 +23,17 @@ public class Board {
 	 * @param y Value of the Y Dimension of the Board
 	 */
 	public Board(int x, int y) {
-		this.width = x;
-		this.height = y;
+		if(x>15){
+			this.width = 15;
+		} else {
+			this.width = x;
+		}
+		if (y > 15) {
+			this.height = 15;
+		} else {
+			this.height = y;
+		}
+
 		try {
 			this.fields = boardReader.getDefaultBoard();
 		} catch(Exception e) {
