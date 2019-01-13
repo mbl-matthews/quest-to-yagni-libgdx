@@ -153,7 +153,6 @@ public class PlayScreen implements Screen {
 	        }
         }
         
-        
         game.batch.end();
         
         
@@ -173,23 +172,22 @@ public class PlayScreen implements Screen {
         	displayMsg = msg;
         	
         	return 1;
-        }
-        if(game.board.getField(game.player.getPosition()).getType().equals(Eventfield.type)) {
+        } else if(game.board.getField(game.player.getPosition()).getType().equals(Eventfield.type)) {
         	int boardwidth=this.game.getBoard().getWidth();
             
         	Eventfield eventfield=(Eventfield) game.board.getField(game.player.getPosition());
         	Event event=eventfield.getEvent();
         	String msg=event.triggerEvent(game.player, game.board);
         	
-        	float playerX = (((QuestToYagni.V_WIDTH/2)-(boardwidth/2)*kastengroesse)+kastengroesse*game.player.getCoordinates().getX())+15;
-            float playerY = QuestToYagni.V_HEIGHT-kastengroesse*(game.player.getCoordinates().getY()-2)-20;
+        	float playerX = (((QuestToYagni.V_WIDTH/2)-(boardwidth/2)*kastengroesse)+kastengroesse*game.player.getCoordinates().getX());
+            float playerY = Math.abs(QuestToYagni.V_HEIGHT-kastengroesse*(game.player.getCoordinates().getY()-2));
+            System.out.println(game.player.getCoordinates().getX()+" "+game.player.getCoordinates().getY()+"\nX:"+playerX+" Y:"+playerY);
             
             displayMsg = msg;
             
-            playerModel.setX(playerX);
-            playerModel.setY(playerY);
-        }
-        if(game.board.getField(game.player.getPosition()).getType().equals(Playfield.type)) {
+            playerModel.setX(playerX+15);
+            playerModel.setY(playerY-20);
+        } else if(game.board.getField(game.player.getPosition()).getType().equals(Playfield.type)) {
         	displayMsg = "";
         }
         return 0;

@@ -34,7 +34,7 @@ public class Launcher extends JFrame {
 	private JPanel controlPanel;
 	private JButton startButton;
 	private JFrame thisFrame;
-	
+	private String displayMsg;
 	
 	public static void main(String[] args) {
 		//String str = "This is a string where every 6 characters a linebreak shall be added";
