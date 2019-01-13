@@ -123,25 +123,25 @@ public class PlayScreen implements Screen {
 	        if(Gdx.input.isKeyJustPressed(Input.Keys.UP)) {
 	        	if(game.player.move(Directions.NORTH.toString())) {
                     playerModel.translateY(kastengroesse*1.78f);
-	        		handleEvent();
+	        		finish = handleEvent();
 	        	}
 	        }
 	        if(Gdx.input.isKeyJustPressed(Input.Keys.DOWN)) {
 	        	if(game.player.move(Directions.SOUTH.toString())) {
 	        		playerModel.translateY(-kastengroesse*1.78f);
-	        		handleEvent();
+	        		finish = handleEvent();
 	        	}
 	        }
 	        if(Gdx.input.isKeyJustPressed(Input.Keys.LEFT)) {
 	        	if(game.player.move(Directions.WEST.toString())) {
 	        		playerModel.translateX(-kastengroesse);
-	        		handleEvent();
+	        		finish = handleEvent();
 	        	}
 	        }
 	        if(Gdx.input.isKeyJustPressed(Input.Keys.RIGHT)) {
 	        	if(game.player.move(Directions.EAST.toString())) {
 	        		playerModel.translateX(kastengroesse);
-	        		handleEvent();
+	        		finish = handleEvent();
 	        	}
 	        }
         }

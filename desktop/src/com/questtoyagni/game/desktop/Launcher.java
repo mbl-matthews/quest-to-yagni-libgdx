@@ -36,12 +36,19 @@ public class Launcher extends JFrame {
 	private JFrame thisFrame;
 	private String displayMsg;
 	
+	/**
+	 * Runs the Launcher
+	 * @param args Holds arguments passed from the command line
+	 */
 	public static void main(String[] args) {
 		//String str = "This is a string where every 6 characters a linebreak shall be added";
 		//System.out.println(PlayScreen.splitTextInLines(str, 6));
 		new Launcher();
 	}
 	
+	/**
+	 * Constructor for the Launcher. Will run the GUI when created.
+	 */
 	public Launcher() {
 		
 		thisFrame = this;
@@ -91,42 +98,25 @@ public class Launcher extends JFrame {
 		this.controlPanel.updateUI();
 	}
 	
+	/**
+	 * 
+	 * @author vMysterion
+	 * 
+	 * Class that implements the ActionListener to execute an action when the Start Button is pressed
+	 *
+	 */
 	private class StartListener implements ActionListener {
 
+		/**
+		 * Starts the GUI with a resolution of 1280x720
+		 */
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			
-			//boolean fullscreen = checkboxFullscreen.isSelected();
-			//int width = 1280;
-			//int height = 720;
-			//try {
-			//	width = Integer.parseInt(widthTextbox.getText());
-			//	height = Integer.parseInt(heightTextbox.getText());
-			//} catch (NumberFormatException nfe) {
+
 			MainGame.mainGame(1280, 720, false);
-			//JOptionPane.showMessageDialog((Component)thisFrame, "Both Values need to be a full number!", "Wrong Resolution", JOptionPane.ERROR_MESSAGE);
-			//	return;
-			//}
-			
-			//if(width < 0 || height < 0) {
-			//	JOptionPane.showMessageDialog((Component)thisFrame, "Both Values need to be greater than 0!", "Wrong Resolution", JOptionPane.ERROR_MESSAGE);
-			//	return;
-			//}
-			
-			//MainGame.mainGame(width, height, fullscreen);
 			
 		}
 		
 	}
 	
-	private static BufferedImage resize(BufferedImage img, int newW, int newH) { 
-	    Image tmp = img.getScaledInstance(newW, newH, Image.SCALE_SMOOTH);
-	    BufferedImage dimg = new BufferedImage(newW, newH, BufferedImage.TYPE_INT_ARGB);
-
-	    Graphics2D g2d = dimg.createGraphics();
-	    g2d.drawImage(tmp, 0, 0, null);
-	    g2d.dispose();
-
-	    return dimg;
-	} 
 }
