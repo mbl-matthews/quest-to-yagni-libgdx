@@ -117,7 +117,7 @@ public class PlayScreen implements Screen {
         }
         if(Gdx.input.isKeyJustPressed(Input.Keys.DOWN)) {
         	if(game.player.getCoordinates().getY() != game.getBoard().getHeight()) {
-        		playerModel.translateY(kastengroesse);
+        		playerModel.translateY(-kastengroesse);
         	}
         }
         if(Gdx.input.isKeyJustPressed(Input.Keys.LEFT)) {
@@ -135,7 +135,7 @@ public class PlayScreen implements Screen {
         
         
     }
-
+    
     /**
      * refreshes the screen, if window-size is changed
      * @param width  -  new screen-width
