@@ -15,6 +15,7 @@ import java.awt.Component;
 
 import javax.swing.border.LineBorder;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 /**
@@ -25,14 +26,9 @@ public class Launcher extends JFrame {
 	
 	private BufferedImage headerImg = null;
 	private JLabel imgLabel = null;
-	private JTextField heightTextbox;
-	private JTextField widthTextbox;
-	private JLabel heightLabel;
 	private JPanel headerPanel;
 	private JPanel lowerPanel;
 	private JPanel controlPanel;
-	private JLabel widthLabel;
-	private JCheckBox checkboxFullscreen;
 	private JButton startButton;
 	private JFrame thisFrame;
 	
@@ -61,6 +57,7 @@ public class Launcher extends JFrame {
 		headerPanel.setBounds(10, 10, 574, 200);
 		getContentPane().add(headerPanel);
 		headerPanel.setLayout(new BorderLayout(0, 0));
+		setLocationRelativeTo(null);
 		setVisible(true);
 		
 		//imgLabel = new JLabel(new ImageIcon(resize(headerImg,480,270)));
@@ -80,34 +77,9 @@ public class Launcher extends JFrame {
 		lowerPanel.add(controlPanel);
 		controlPanel.setLayout(null);
 		
-		heightLabel = new JLabel("Height:");
-		heightLabel.setBounds(10, 35, 45, 20);
-		controlPanel.add(heightLabel);
-		heightLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		
-		heightTextbox = new JTextField();
-		heightTextbox.setBounds(60, 35, 135, 20);
-		controlPanel.add(heightTextbox);
-		heightTextbox.setColumns(10);
-		
-		widthLabel = new JLabel("Width:");
-		widthLabel.setBounds(10, 10, 47, 20);
-		controlPanel.add(widthLabel);
-		widthLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		
-		widthTextbox = new JTextField();
-		widthTextbox.setBounds(60, 10, 135, 20);
-		controlPanel.add(widthTextbox);
-		widthTextbox.setColumns(10);
-		
-		checkboxFullscreen = new JCheckBox("Fullscreen");
-		checkboxFullscreen.setBounds(6, 60, 198, 23);
-		controlPanel.add(checkboxFullscreen);
-		checkboxFullscreen.setOpaque(false);
-		
-		startButton = new JButton("StartGame");
+		startButton = new JButton("Start Game");
 		startButton.addActionListener(new StartListener());
-		startButton.setBounds(10, 85, 185, 23);
+		startButton.setBounds(10, 11, 185, 97);
 		controlPanel.add(startButton);
 
 		this.controlPanel.updateUI();
@@ -118,24 +90,25 @@ public class Launcher extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
-			boolean fullscreen = checkboxFullscreen.isSelected();
-			int width = 1280;
-			int height = 720;
-			try {
-				width = Integer.parseInt(widthTextbox.getText());
-				height = Integer.parseInt(heightTextbox.getText());
-			} catch (NumberFormatException nfe) {
+			//boolean fullscreen = checkboxFullscreen.isSelected();
+			//int width = 1280;
+			//int height = 720;
+			//try {
+			//	width = Integer.parseInt(widthTextbox.getText());
+			//	height = Integer.parseInt(heightTextbox.getText());
+			//} catch (NumberFormatException nfe) {
 				MainGame.mainGame(1280, 720, false);
+				thisFrame.dispatchEvent(new WindowEvent(thisFrame, WindowEvent.WINDOW_CLOSING));
 				//JOptionPane.showMessageDialog((Component)thisFrame, "Both Values need to be a full number!", "Wrong Resolution", JOptionPane.ERROR_MESSAGE);
-				return;
-			}
+			//	return;
+			//}
 			
-			if(width < 0 || height < 0) {
-				JOptionPane.showMessageDialog((Component)thisFrame, "Both Values need to be greater than 0!", "Wrong Resolution", JOptionPane.ERROR_MESSAGE);
-				return;
-			}
+			//if(width < 0 || height < 0) {
+			//	JOptionPane.showMessageDialog((Component)thisFrame, "Both Values need to be greater than 0!", "Wrong Resolution", JOptionPane.ERROR_MESSAGE);
+			//	return;
+			//}
 			
-			MainGame.mainGame(width, height, fullscreen);
+			//MainGame.mainGame(width, height, fullscreen);
 			
 		}
 		

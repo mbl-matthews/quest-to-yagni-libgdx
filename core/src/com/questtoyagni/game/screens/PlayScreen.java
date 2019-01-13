@@ -1,5 +1,10 @@
 package com.questtoyagni.game.screens;
 
+import javafx.scene.control.*;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
@@ -12,6 +17,10 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.questtoyagni.board.Board;
+import com.questtoyagni.coordinates.Directions;
+import com.questtoyagni.event.Event;
+import com.questtoyagni.field.Eventfield;
+import com.questtoyagni.field.Finishfield;
 import com.questtoyagni.game.QuestToYagni;
 import com.questtoyagni.game.scenes.GameOverlay;
 
@@ -26,24 +35,20 @@ public class PlayScreen implements Screen {
     private OrthographicCamera gamecam; //Für Viewport
     private Viewport gameport;
     private GameOverlay gameoverlay;
-    private Board board;
     private ShapeRenderer shape;
     private Sprite playerModel;
+    private int kastengroesse;
 
   /**
    * @param game QuestToYagni-object
    */
     public PlayScreen(QuestToYagni game){
         this.game = game;
-        //System.out.println(new File("..\\core\\assets\\logo_trans.png"));
         texture = new Texture("..\\core\\assets\\logo_trans.png");
         gamecam = new OrthographicCamera();
         gameport = new FitViewport(QuestToYagni.V_WIDTH,QuestToYagni.V_HEIGHT,gamecam);
         gameoverlay = new GameOverlay(game.batch);
         playerModel = new Sprite(new Texture("..\\core\\assets\\player_coloured.png"));
-        //System.out.println("W:"+pM.getWidth()+" H:"+pM.getHeight());
-        //playerModel = new Sprite(pM);
-        //System.out.println("W:"+playerModel.getWidth()+" H:"+playerModel.getHeight());
         shape = new ShapeRenderer();
     }
 
@@ -71,7 +76,7 @@ public class PlayScreen implements Screen {
         shape.begin(ShapeRenderer.ShapeType.Filled);
         shape.setColor(new Color(0.3f,0.3f,0.3f,1));
         //Kästchengröße berechnen
-        int kastengroesse=0;
+        kastengroesse=0;
         if(QuestToYagni.V_WIDTH<QuestToYagni.V_HEIGHT){
             if(this.game.getBoard().getWidth()<this.game.getBoard().getHeight()){
                 kastengroesse = QuestToYagni.V_WIDTH/this.game.getBoard().getHeight();
@@ -111,29 +116,63 @@ public class PlayScreen implements Screen {
         
         //controls
         if(Gdx.input.isKeyJustPressed(Input.Keys.UP)) {
-        	if(game.player.move("North")) {
-        		playerModel.translateY(kastengroesse);
+        	if(game.player.move(Directions.NORTH.toString())) {
+        		playerModel.translateY(kastengroesse*1.78f);
+        		handleEvent();
         	}
         }
         if(Gdx.input.isKeyJustPressed(Input.Keys.DOWN)) {
-        	if(game.player.move("South")) {
-        		playerModel.translateY(-kastengroesse);
+        	if(game.player.move(Directions.SOUTH.toString())) {
+        		playerModel.translateY(-kastengroesse*1.78f);
+        		handleEvent();
         	}
         }
         if(Gdx.input.isKeyJustPressed(Input.Keys.LEFT)) {
-        	if(game.player.move("West")) {
+        	if(game.player.move(Directions.WEST.toString())) {
         		playerModel.translateX(-kastengroesse);
+        		handleEvent();
         	}
         }
         if(Gdx.input.isKeyJustPressed(Input.Keys.RIGHT)) {
-        	if(game.player.move("East")) {
+        	if(game.player.move(Directions.EAST.toString())) {
         		playerModel.translateX(kastengroesse);
+        		handleEvent();
         	}
         }
         
         game.batch.end();
         
         
+    }
+    
+    /**
+     * Handles the event that could be triggered after moving on the field
+     * @return returns 1 if the finishfield was trigger, 0 if not
+     */
+    private int handleEvent() {
+    	
+    	if(game.board.getField(game.player.getPosition()).getType().equals(Finishfield.type)) {
+        	Finishfield finish=(Finishfield) game.board.getField(game.player.getPosition());
+        	Event event=finish.getEvent();
+        	String msg=event.triggerEvent(game.player, game.board);
+        	JOptionPane.showMessageDialog(null, msg, "Finishfield", JOptionPane.INFORMATION_MESSAGE);
+        	return 1;
+        }
+        if(game.board.getField(game.player.getPosition()).getType().equals(Eventfield.type)) {
+        	int boardwidth=this.game.getBoard().getWidth();
+            
+        	Eventfield eventfield=(Eventfield) game.board.getField(game.player.getPosition());
+        	Event event=eventfield.getEvent();
+        	String msg=event.triggerEvent(game.player, game.board);
+        	JOptionPane.showMessageDialog(null, msg, "Eventfield", JOptionPane.INFORMATION_MESSAGE);
+        	
+        	float playerX = (((QuestToYagni.V_WIDTH/2)-(boardwidth/2)*kastengroesse)+kastengroesse*game.player.getCoordinates().getX())+15;
+            float playerY = QuestToYagni.V_HEIGHT-kastengroesse*(game.player.getCoordinates().getY()-2)-20;
+            
+            playerModel.setX(playerX);
+            playerModel.setY(playerY);
+        }
+        return 0;
     }
     
     /**

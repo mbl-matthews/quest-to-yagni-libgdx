@@ -36,6 +36,9 @@ public class QuestToYagni extends Game {
 	public QuestToYagni(int boardwidth, int boardheight){
 		this.boardwidth = boardwidth;
 		this.boardheight = boardheight;
+		this.board = new Board(boardwidth,boardheight);
+		Coordinate start = board.getStartfieldCoordinates();
+		this.player = new Player("Player", start,board);
 	}
 
 	/**
@@ -45,9 +48,7 @@ public class QuestToYagni extends Game {
 	@Override
 	public void create () {
 		//Game Logic
-		this.board = new Board(boardwidth,boardheight);
-		Coordinate start = board.getStartfieldCoordinates();
-		this.player = new Player("Player", start,board);
+		
 
 		//GDX Logic
 		batch = new SpriteBatch();
