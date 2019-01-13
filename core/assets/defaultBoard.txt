@@ -22,7 +22,7 @@ false,false,true,false,field
 true,true,false,false,field
 false,false,true,true,wall
 true,false,true,true,field
-false,false,true,false,field
+false,false,true,true,field
 false,false,true,true,field
 true,false,false,false,field
 false,false,true,true,field
