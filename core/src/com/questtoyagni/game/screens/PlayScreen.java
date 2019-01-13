@@ -1,16 +1,10 @@
 package com.questtoyagni.game.screens;
 
-import javafx.scene.control.*;
-
 import java.util.ArrayList;
-
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -20,13 +14,13 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import com.questtoyagni.board.Board;
 import com.questtoyagni.coordinates.Directions;
 import com.questtoyagni.event.Event;
 import com.questtoyagni.field.Eventfield;
 import com.questtoyagni.field.Finishfield;
 import com.questtoyagni.field.Playfield;
 import com.questtoyagni.game.QuestToYagni;
+import com.questtoyagni.game.sceenes.GameOverlay;
 
 /**
  * renders the play-screen
@@ -44,6 +38,7 @@ public class PlayScreen implements Screen {
     private int finish = 0;
     private BitmapFont font;
     private String displayMsg = "";
+    private GameOverlay gameoverlay;
 
   /**
    * @param game QuestToYagni-object
@@ -53,6 +48,7 @@ public class PlayScreen implements Screen {
         texture = new Texture("..\\core\\assets\\logo_trans.png");
         gamecam = new OrthographicCamera();
         gameport = new FitViewport(QuestToYagni.V_WIDTH,QuestToYagni.V_HEIGHT,gamecam);
+        gameoverlay = new GameOverlay(game.batch);
         playerModel = new Sprite(new Texture("..\\core\\assets\\player_coloured.png"));
         shape = new ShapeRenderer();
         font = new BitmapFont(Gdx.files.local("..\\core\\assets\\arial.fnt"),false);
@@ -72,6 +68,7 @@ public class PlayScreen implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         
         game.batch.setProjectionMatrix(gamecam.combined); //Es soll nur das gerendert werden, was die Kamera sieht
+        gameoverlay.stage.draw();
         game.batch.begin();
         game.batch.draw(texture,0,0,200,200);
         game.batch.end();
@@ -181,8 +178,8 @@ public class PlayScreen implements Screen {
             
             displayMsg = msg;
             
-            playerModel.setX(playerX+15);
-            playerModel.setY(playerY-20);
+            playerModel.setX(playerX);
+            playerModel.setY(playerY);
         } else if(game.board.getField(game.player.getPosition()).getType().equals(Playfield.type)) {
         	displayMsg = "";
         }
