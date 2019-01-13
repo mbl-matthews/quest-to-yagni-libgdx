@@ -18,9 +18,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import com.questtoyagni.game.QuestToYagni;
 
 /**
- *!!!!
- *!!!! HALLO HIER FELT WAS WEHE DAS STEHT SO IN DER ABGABE !!!!!
- *!!!!
+ * Eine Aushilfsklasse damit der Viewport gesetzt wird und das Bild richtig angezeigt wird.
  * @author: Levent K
  */
 
