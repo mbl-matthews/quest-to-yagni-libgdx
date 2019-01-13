@@ -25,7 +25,6 @@ public class QuestToYagni extends Game {
 	public static final int V_HEIGHT = 720;
 
 
-	Texture img;
 	Music music;
 	PlayScreen playscreen;
 
@@ -73,7 +72,6 @@ public class QuestToYagni extends Game {
 	 */
 	@Override
 	public void dispose () {
-		img.dispose();
 		batch.dispose();
 	}
 
