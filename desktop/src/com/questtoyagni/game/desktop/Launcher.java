@@ -47,7 +47,7 @@ public class Launcher extends JFrame {
 	}
 	
 	/**
-	 * Constructor for the Launcher. Will run the GUI when created.
+	 * Constructor for the Launcher,
 	 */
 	public Launcher() {
 		
@@ -118,5 +118,23 @@ public class Launcher extends JFrame {
 		}
 		
 	}
+	
+	/**
+	 * Resizes a BufferedImage with the given sizes
+	 * @param img BufferedImage to be resized
+	 * @param newW new width
+	 * @param newH new height
+	 * @return The resized BufferedImage
+	 */
+	private static BufferedImage resize(BufferedImage img, int newW, int newH) { 
+	    Image tmp = img.getScaledInstance(newW, newH, Image.SCALE_SMOOTH);
+	    BufferedImage dimg = new BufferedImage(newW, newH, BufferedImage.TYPE_INT_ARGB);
+
+	    Graphics2D g2d = dimg.createGraphics();
+	    g2d.drawImage(tmp, 0, 0, null);
+	    g2d.dispose();
+
+	    return dimg;
+	} 
 	
 }
