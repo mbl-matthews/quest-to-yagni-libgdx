@@ -97,8 +97,7 @@ public class Launcher extends JFrame {
 			//	width = Integer.parseInt(widthTextbox.getText());
 			//	height = Integer.parseInt(heightTextbox.getText());
 			//} catch (NumberFormatException nfe) {
-				MainGame.mainGame(1280, 720, false);
-				thisFrame.dispatchEvent(new WindowEvent(thisFrame, WindowEvent.WINDOW_CLOSING));
+			MainGame.mainGame(1280, 720, false);
 				//JOptionPane.showMessageDialog((Component)thisFrame, "Both Values need to be a full number!", "Wrong Resolution", JOptionPane.ERROR_MESSAGE);
 			//	return;
 			//}
