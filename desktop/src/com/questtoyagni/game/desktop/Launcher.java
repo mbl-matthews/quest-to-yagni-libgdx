@@ -14,6 +14,9 @@ import java.awt.Color;
 import java.awt.Component;
 
 import javax.swing.border.LineBorder;
+
+import com.questtoyagni.game.screens.PlayScreen;
+
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.ActionEvent;
@@ -32,7 +35,10 @@ public class Launcher extends JFrame {
 	private JButton startButton;
 	private JFrame thisFrame;
 	
+	
 	public static void main(String[] args) {
+		//String str = "This is a string where every 6 characters a linebreak shall be added";
+		//System.out.println(PlayScreen.splitTextInLines(str, 6));
 		new Launcher();
 	}
 	
@@ -98,7 +104,7 @@ public class Launcher extends JFrame {
 			//	height = Integer.parseInt(heightTextbox.getText());
 			//} catch (NumberFormatException nfe) {
 			MainGame.mainGame(1280, 720, false);
-				//JOptionPane.showMessageDialog((Component)thisFrame, "Both Values need to be a full number!", "Wrong Resolution", JOptionPane.ERROR_MESSAGE);
+			//JOptionPane.showMessageDialog((Component)thisFrame, "Both Values need to be a full number!", "Wrong Resolution", JOptionPane.ERROR_MESSAGE);
 			//	return;
 			//}
 			

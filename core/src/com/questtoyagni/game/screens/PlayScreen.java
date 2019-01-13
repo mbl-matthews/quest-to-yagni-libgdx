@@ -2,16 +2,20 @@ package com.questtoyagni.game.screens;
 
 import javafx.scene.control.*;
 
+import java.util.ArrayList;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.viewport.FitViewport;
@@ -21,6 +25,7 @@ import com.questtoyagni.coordinates.Directions;
 import com.questtoyagni.event.Event;
 import com.questtoyagni.field.Eventfield;
 import com.questtoyagni.field.Finishfield;
+import com.questtoyagni.field.Playfield;
 import com.questtoyagni.game.QuestToYagni;
 import com.questtoyagni.game.scenes.GameOverlay;
 
@@ -38,6 +43,9 @@ public class PlayScreen implements Screen {
     private ShapeRenderer shape;
     private Sprite playerModel;
     private int kastengroesse;
+    private int finish = 0;
+    private BitmapFont font;
+    private String displayMsg = "";
 
   /**
    * @param game QuestToYagni-object
@@ -50,6 +58,7 @@ public class PlayScreen implements Screen {
         gameoverlay = new GameOverlay(game.batch);
         playerModel = new Sprite(new Texture("..\\core\\assets\\player_coloured.png"));
         shape = new ShapeRenderer();
+        font = new BitmapFont(Gdx.files.local("..\\core\\assets\\arial.fnt"),false);
     }
 
     @Override
@@ -64,8 +73,6 @@ public class PlayScreen implements Screen {
     public void render(float delta) {
         Gdx.gl.glClearColor(1,1,1,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        
-        
         
         game.batch.setProjectionMatrix(gamecam.combined); //Es soll nur das gerendert werden, was die Kamera sieht
         gameoverlay.stage.draw();
@@ -106,6 +113,10 @@ public class PlayScreen implements Screen {
         
         game.batch.begin();
         
+        font.setColor(Color.BLACK);
+        font.draw(game.batch,splitTextInLines(displayMsg,30),20,QuestToYagni.V_HEIGHT);
+        font.getData().setScale(0.75f, 1f);
+        
         //initial draw of player
         playerModel.draw(game.batch);
         if(playerModel.getX() == 0.0f && playerModel.getY() == 0.0f) {
@@ -115,30 +126,33 @@ public class PlayScreen implements Screen {
         playerModel.setSize(kastengroesse*0.645f,kastengroesse);
         
         //controls
-        if(Gdx.input.isKeyJustPressed(Input.Keys.UP)) {
-        	if(game.player.move(Directions.NORTH.toString())) {
-        		playerModel.translateY(kastengroesse*1.78f);
-        		handleEvent();
-        	}
+        if(finish == 0) {
+	        if(Gdx.input.isKeyJustPressed(Input.Keys.UP)) {
+	        	if(game.player.move(Directions.NORTH.toString())) {
+	        		playerModel.translateY(kastengroesse*1.78f);
+	        		handleEvent();
+	        	}
+	        }
+	        if(Gdx.input.isKeyJustPressed(Input.Keys.DOWN)) {
+	        	if(game.player.move(Directions.SOUTH.toString())) {
+	        		playerModel.translateY(-kastengroesse*1.78f);
+	        		handleEvent();
+	        	}
+	        }
+	        if(Gdx.input.isKeyJustPressed(Input.Keys.LEFT)) {
+	        	if(game.player.move(Directions.WEST.toString())) {
+	        		playerModel.translateX(-kastengroesse);
+	        		handleEvent();
+	        	}
+	        }
+	        if(Gdx.input.isKeyJustPressed(Input.Keys.RIGHT)) {
+	        	if(game.player.move(Directions.EAST.toString())) {
+	        		playerModel.translateX(kastengroesse);
+	        		handleEvent();
+	        	}
+	        }
         }
-        if(Gdx.input.isKeyJustPressed(Input.Keys.DOWN)) {
-        	if(game.player.move(Directions.SOUTH.toString())) {
-        		playerModel.translateY(-kastengroesse*1.78f);
-        		handleEvent();
-        	}
-        }
-        if(Gdx.input.isKeyJustPressed(Input.Keys.LEFT)) {
-        	if(game.player.move(Directions.WEST.toString())) {
-        		playerModel.translateX(-kastengroesse);
-        		handleEvent();
-        	}
-        }
-        if(Gdx.input.isKeyJustPressed(Input.Keys.RIGHT)) {
-        	if(game.player.move(Directions.EAST.toString())) {
-        		playerModel.translateX(kastengroesse);
-        		handleEvent();
-        	}
-        }
+        
         
         game.batch.end();
         
@@ -155,7 +169,9 @@ public class PlayScreen implements Screen {
         	Finishfield finish=(Finishfield) game.board.getField(game.player.getPosition());
         	Event event=finish.getEvent();
         	String msg=event.triggerEvent(game.player, game.board);
-        	JOptionPane.showMessageDialog(null, msg, "Finishfield", JOptionPane.INFORMATION_MESSAGE);
+        	
+        	displayMsg = msg;
+        	
         	return 1;
         }
         if(game.board.getField(game.player.getPosition()).getType().equals(Eventfield.type)) {
@@ -164,15 +180,55 @@ public class PlayScreen implements Screen {
         	Eventfield eventfield=(Eventfield) game.board.getField(game.player.getPosition());
         	Event event=eventfield.getEvent();
         	String msg=event.triggerEvent(game.player, game.board);
-        	JOptionPane.showMessageDialog(null, msg, "Eventfield", JOptionPane.INFORMATION_MESSAGE);
         	
         	float playerX = (((QuestToYagni.V_WIDTH/2)-(boardwidth/2)*kastengroesse)+kastengroesse*game.player.getCoordinates().getX())+15;
             float playerY = QuestToYagni.V_HEIGHT-kastengroesse*(game.player.getCoordinates().getY()-2)-20;
             
+            displayMsg = msg;
+            
             playerModel.setX(playerX);
             playerModel.setY(playerY);
         }
+        if(game.board.getField(game.player.getPosition()).getType().equals(Playfield.type)) {
+        	displayMsg = "";
+        }
         return 0;
+    }
+    
+    /**
+     * Splits a given line of text into multiple lines after the length of the given numberOfCharacters is exceeded.
+     * For exmaple:
+     * splitTextInLines("This is a line of text with words",5); would return
+     * "This is
+     * a line
+     * of text
+     * with words"
+     * 
+     * @param text The text that will be split
+     * @param numberOfCharacters The number of Characters after the line will be split
+     */
+    private String splitTextInLines(String text, int numberOfCharacters) {
+    	String[] tokens = text.split(" ");
+    	ArrayList<String> msg = new ArrayList<String>();
+    	StringBuilder sb = new StringBuilder("");
+    	for(int i = 0; i<tokens.length;i++) {
+    		String token = tokens[i];
+    		sb.append(token+" ");
+    		if(sb.toString().trim().length()>=numberOfCharacters) {
+    			sb.append("\n");
+    			msg.add(sb.toString());
+    			sb.setLength(0);
+    		} else if(i==tokens.length-1) {
+    			msg.add(sb.toString());
+    		}
+    	}
+    	
+    	StringBuilder finalText = new StringBuilder("");
+    	for(String line : msg) {
+    		finalText.append(line);
+    	}
+    	
+    	return finalText.toString();
     }
     
     /**
