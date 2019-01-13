@@ -122,7 +122,7 @@ public class PlayScreen implements Screen {
         if(finish == 0) {
 	        if(Gdx.input.isKeyJustPressed(Input.Keys.UP)) {
 	        	if(game.player.move(Directions.NORTH.toString())) {
-	        		playerModel.translateY(kastengroesse*1.78f);
+                    playerModel.translateY(kastengroesse*1.78f);
 	        		handleEvent();
 	        	}
 	        }
@@ -172,14 +172,14 @@ public class PlayScreen implements Screen {
         	Event event=eventfield.getEvent();
         	String msg=event.triggerEvent(game.player, game.board);
         	
-        	float playerX = (((QuestToYagni.V_WIDTH/2)-(boardwidth/2)*kastengroesse)+kastengroesse*game.player.getCoordinates().getX());
-            float playerY = Math.abs(QuestToYagni.V_HEIGHT-kastengroesse*(game.player.getCoordinates().getY()-2));
+        	float playerX = ((QuestToYagni.V_WIDTH/2)-(boardwidth/2)*kastengroesse)+(kastengroesse*game.player.getCoordinates().getX());
+            float playerY = QuestToYagni.V_HEIGHT-kastengroesse*(game.player.getCoordinates().getY()+1);
             System.out.println(game.player.getCoordinates().getX()+" "+game.player.getCoordinates().getY()+"\nX:"+playerX+" Y:"+playerY);
             
             displayMsg = msg;
             
-            playerModel.setX(playerX);
-            playerModel.setY(playerY);
+            playerModel.setX(playerX+15);
+            playerModel.setY(playerY*1.78f+2*20);
         } else if(game.board.getField(game.player.getPosition()).getType().equals(Playfield.type)) {
         	displayMsg = "";
         }
