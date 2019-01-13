@@ -27,7 +27,6 @@ import com.questtoyagni.field.Eventfield;
 import com.questtoyagni.field.Finishfield;
 import com.questtoyagni.field.Playfield;
 import com.questtoyagni.game.QuestToYagni;
-import com.questtoyagni.game.scenes.GameOverlay;
 
 /**
  * renders the play-screen
@@ -39,7 +38,6 @@ public class PlayScreen implements Screen {
     private Texture texture;
     private OrthographicCamera gamecam; //Für Viewport
     private Viewport gameport;
-    private GameOverlay gameoverlay;
     private ShapeRenderer shape;
     private Sprite playerModel;
     private int kastengroesse;
@@ -55,7 +53,6 @@ public class PlayScreen implements Screen {
         texture = new Texture("..\\core\\assets\\logo_trans.png");
         gamecam = new OrthographicCamera();
         gameport = new FitViewport(QuestToYagni.V_WIDTH,QuestToYagni.V_HEIGHT,gamecam);
-        gameoverlay = new GameOverlay(game.batch);
         playerModel = new Sprite(new Texture("..\\core\\assets\\player_coloured.png"));
         shape = new ShapeRenderer();
         font = new BitmapFont(Gdx.files.local("..\\core\\assets\\arial.fnt"),false);
@@ -75,7 +72,6 @@ public class PlayScreen implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         
         game.batch.setProjectionMatrix(gamecam.combined); //Es soll nur das gerendert werden, was die Kamera sieht
-        gameoverlay.stage.draw();
         game.batch.begin();
         game.batch.draw(texture,0,0,200,200);
         game.batch.end();
