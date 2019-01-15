@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.questtoyagni.board.Board;
 import com.questtoyagni.coordinates.Coordinate;
+import com.questtoyagni.field.Walls;
 import com.questtoyagni.player.Player;
 /**
  * teleport-event, teleport the player to a random position on the board
@@ -52,6 +53,8 @@ public class Teleportevent extends Event{
 		
 		
 		p.setPosition(new Coordinate(x,y));
+		Walls walls=b.changePositionAndGetWallsAroundNewPosition(p.getPosition());
+		p.setWalls(walls);
 		return ("You got Teleported");
 	}
 }

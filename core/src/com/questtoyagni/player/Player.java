@@ -99,4 +99,10 @@ public class Player {
 		return walls;
 	}
 
+
+	public void setWalls(Walls walls) {
+		this.walls = walls;
+	}
+	
+
 }
