@@ -58,10 +58,12 @@ public class Coordinate {
 
 	/**
 	 * Checks if 2 Coordinates are equal
-	 * @param cord
+	 * @param Object
 	 * @return 1 if equal 0 if not
 	 */
-	public boolean equals(Coordinate cord) {
+	@Override
+	public boolean equals(Object o) {
+		Coordinate cord=(Coordinate)o;
 		return this.x == cord.x && this.y == cord.y;
 	}
 }
