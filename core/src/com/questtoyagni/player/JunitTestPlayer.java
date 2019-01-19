@@ -18,9 +18,9 @@ public class JunitTestPlayer {
 	void testRichtung() {
 		Player p = new Player("Player1",new Coordinate(1,1),board );
 		Assertions.assertEquals(true, p.move("north"),"Die Richtung ist blockiert");
-		Assertions.assertEquals(false, p.move("south"),"Die Richtung ist blockiert");
-		Assertions.assertEquals(true, p.move("west"),"Die Richtung ist blockiert");
-		Assertions.assertEquals(true, p.move("east"),"Die Richtung ist blockiert");
+		Assertions.assertEquals(true, p.move("south"),"Die Richtung ist blockiert");
+		Assertions.assertEquals(false, p.move("west"),"Die Richtung ist blockiert");
+		Assertions.assertEquals(false, p.move("east"),"Die Richtung ist blockiert");
 	}
 	
 	@Test

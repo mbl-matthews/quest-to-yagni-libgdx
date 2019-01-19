@@ -1,5 +1,7 @@
 package com.questtoyagni.field;
 
+import com.questtoyagni.coordinates.Coordinate;
+
 /**
  *  represents the walls around a field-object as 4 walls(n,s,w,e)
  * @author Timo K
@@ -63,6 +65,12 @@ public class Walls {
 		if (west != obj.west)
 			return false;
 		return true;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		Walls wall=(Walls)o;
+		return this.north == wall.north && this.south == wall.south && this.west == wall.west && this.east == wall.east;
 	}
 
 }
