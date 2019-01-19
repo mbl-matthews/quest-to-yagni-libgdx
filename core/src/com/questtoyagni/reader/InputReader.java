@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 
 /**
  * reads input
- * @author: Levent K
+ * @author Levent K
  */
 
 public class InputReader {

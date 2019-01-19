@@ -8,7 +8,7 @@ import com.questtoyagni.board.Board;
 import com.questtoyagni.coordinates.Coordinate;
 import com.questtoyagni.field.Walls;
 /**
- * @author: Lukas H
+ * @author Lukas H
  */
 
 public class JunitTestPlayer {

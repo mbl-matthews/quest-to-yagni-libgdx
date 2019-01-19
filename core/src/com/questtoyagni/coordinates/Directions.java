@@ -2,7 +2,7 @@ package com.questtoyagni.coordinates;
 /**
  * 
  * directions of the game
- * @author: Lukas H
+ * @author Lukas H
  */
 public enum Directions {
 	

@@ -6,7 +6,7 @@ import com.questtoyagni.player.Player;
 
 /**
  * trap-event, triggers a trap event
- * @author: Lukas H
+ * @author Lukas H
  */
 public class Trapevent extends Event{
 

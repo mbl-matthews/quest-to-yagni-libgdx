@@ -6,7 +6,7 @@ import com.questtoyagni.coordinates.Directions;
 import com.questtoyagni.player.Player;
 /**
  * hint-event, prints the direction of the finish-field
- * @author: Timo K
+ * @author Timo K
  */
 public class Hintevent extends Event{
 

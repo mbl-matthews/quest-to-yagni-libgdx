@@ -16,7 +16,7 @@ import com.questtoyagni.field.Walls;
 
 /**
  * reads a board-file and returns it as an object
- * @author: Mathis B, Timo K
+ * @author Mathis B, Timo K
  */
 
 public class BoardReader {

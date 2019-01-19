@@ -24,7 +24,7 @@ import com.questtoyagni.game.sceenes.GameOverlay;
 
 /**
  * renders the play-screen
- * @author: Levent K
+ * @author Levent K
  */
 
 public class PlayScreen implements Screen {

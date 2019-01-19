@@ -12,7 +12,7 @@ import com.questtoyagni.player.Player;
 
 /**
  * main-screen shows actual state of the game-logic and controls the board
- * @author: Levent K
+ * @author Levent K
  */
 
 public class QuestToYagni extends Game {
