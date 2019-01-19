@@ -5,7 +5,7 @@ import com.questtoyagni.board.Board;
 import com.questtoyagni.player.Player;
 /**
  *  abstract event class, triggers event method
- *  @author: Lukas H.
+ *  @author Lukas H.
  */
 public abstract class Event{
     private int id;

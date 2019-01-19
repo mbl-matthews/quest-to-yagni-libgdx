@@ -19,7 +19,7 @@ import com.questtoyagni.game.QuestToYagni;
 
 /**
  * Eine Aushilfsklasse damit der Viewport gesetzt wird und das Bild richtig angezeigt wird.
- * @author: Levent K
+ * @author Levent K
  */
 
 public class GameOverlay {

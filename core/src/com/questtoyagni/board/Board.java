@@ -11,7 +11,7 @@ import com.questtoyagni.reader.BoardReader;
  *	represents the board using width and height to determinate the size
  *	the board itself is organized in Field-objects
  *	Width/Height can't be bigger than 15.
- *  @author: Mathis B
+ *  @author Mathis B
  */
 public class Board {
 	private ArrayList<Field> fields = new ArrayList<Field>();

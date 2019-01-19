@@ -4,7 +4,7 @@ import com.questtoyagni.board.Board;
 import com.questtoyagni.player.Player;
 /**
  * finish-event, ends the game
- * @author: Lukas H.
+ * @author Lukas H.
  */
 public class Finishevent extends Event{
 

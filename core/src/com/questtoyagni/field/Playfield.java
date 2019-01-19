@@ -3,7 +3,7 @@ package com.questtoyagni.field;
 import com.questtoyagni.field.Field;
 /**
  * A "normal" playing-field without any events
- * @author: Levent K
+ * @author Levent K
  */
 
 public class Playfield extends Field{

@@ -5,7 +5,7 @@ import com.questtoyagni.field.Field;
 
 /**
  * A field which holds an event
- * @author: Levent K
+ * @author Levent K
  */
 
 public class Eventfield extends Field{

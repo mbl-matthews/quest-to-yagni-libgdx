@@ -9,7 +9,7 @@ import com.questtoyagni.field.Walls;
 /**
  * Represents the player of the game and lets him move
  * holds his name,his position,the board of the actual game and the walls at his position
- * @author: Lukas H,Timo K
+ * @author Lukas H,Timo K
  */
 public class Player {
 

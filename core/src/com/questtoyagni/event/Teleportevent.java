@@ -8,8 +8,8 @@ import com.questtoyagni.field.Walls;
 import com.questtoyagni.player.Player;
 /**
  * teleport-event, teleport the player to a random position on the board
- * @author: Timo K
- * @author: Lukas H
+ * @author Timo K
+ * @author Lukas H
  */
 
 public class Teleportevent extends Event{

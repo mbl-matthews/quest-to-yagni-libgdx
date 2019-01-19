@@ -8,7 +8,7 @@ import com.questtoyagni.event.Event;
 import com.questtoyagni.event.Finishevent;
 import com.questtoyagni.event.Trapevent;
 /**
- * @author: Levent K
+ * @author Levent K
  */
 
 class JunitTestField {

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import com.questtoyagni.player.Player;
 /**
- * @author: Mathis B
+ * @author Mathis B
  */
 
 public class JUnitTestBoard {

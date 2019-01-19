@@ -8,7 +8,7 @@ import com.questtoyagni.player.Player;
 
 /**
  * wall-event, prints walls around the players actual position
- * @author: Lukas H
+ * @author Lukas H
  */
 public class Wallevent extends Event{
 	 /**

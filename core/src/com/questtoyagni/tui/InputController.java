@@ -11,7 +11,7 @@ import com.questtoyagni.player.*;
 
 /**
  * text-based interface of the game
- * @author: Timo K, Lukas H
+ * @author Timo K, Lukas H
  */
 public class InputController {
     private Board board;

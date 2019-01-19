@@ -11,7 +11,7 @@ import com.questtoyagni.field.Finishfield;
 import com.questtoyagni.player.Player;
 
 /**
- * @author: Lukas H
+ * @author Lukas H
  */
 
 class JunitEvent {

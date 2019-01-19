@@ -2,7 +2,7 @@ package com.questtoyagni.field;
 
 /**
  * Abstract class for field objects used by game logic
- * @author: Levent K
+ * @author Levent K
  */
 public abstract class Field {
     private int id;

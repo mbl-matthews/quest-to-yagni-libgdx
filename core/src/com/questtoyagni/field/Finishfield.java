@@ -6,7 +6,7 @@ import com.questtoyagni.event.Finishevent;
 import com.questtoyagni.field.Field;
 /**
  * A field which holds the finish-event
- * @author: Levent K
+ * @author Levent K
  */
 
 public class Finishfield extends Field{

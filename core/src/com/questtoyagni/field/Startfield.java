@@ -3,7 +3,7 @@ package com.questtoyagni.field;
 import com.questtoyagni.field.Field;
 /**
  * A field which is the starting position for the player
- * @author: Levent K
+ * @author Levent K
  */
 
 public class Startfield extends Field{
