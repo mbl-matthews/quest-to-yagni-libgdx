@@ -39,10 +39,10 @@ public class Wallevent extends Event{
 		String output = "walls in following directions: ";
 		Field field=b.getField(p.getPosition());
 		Walls walls=field.getWalls();
-		if(walls.isNorth()) output+=Directions.NORTH.toString();
-		if(walls.isSouth()) output+=Directions.SOUTH.toString();
-		if(walls.isWest()) output+=Directions.WEST.toString();
-		if(walls.isEast()) output+=Directions.EAST.toString();
+		if(walls.isNorth()) output+=Directions.NORTH.toString()+" ";
+		if(walls.isSouth()) output+=Directions.SOUTH.toString()+" ";
+		if(walls.isWest()) output+=Directions.WEST.toString()+" ";
+		if(walls.isEast()) output+=Directions.EAST.toString()+" ";
 		return output;
 	}
 }
