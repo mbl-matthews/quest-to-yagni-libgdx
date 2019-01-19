@@ -37,10 +37,10 @@ class JunitEvent {
 	@Test
 	void testWall() {
 		Board board = new Board(5,7);
-		Player p = new Player("Player1",new Coordinate(0,1),board);
+		Player p = new Player("Player1",new Coordinate(2,4),board);
 		Eventfield eventfield=(Eventfield) board.getField(p.getPosition());
     	Event event=eventfield.getEvent();
-		Assertions.assertEquals("walls in following directions: west east", event.triggerEvent(p, board),"Wände werden nicht korrekt gelesen");
+		Assertions.assertEquals("walls in following directions: West East ", event.triggerEvent(p, board),"Wände werden nicht korrekt gelesen");
 	}
 	
 
